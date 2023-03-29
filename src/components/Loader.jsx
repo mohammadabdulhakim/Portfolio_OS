@@ -1,9 +1,14 @@
-import React from 'react'
+import { Html, useProgress } from "@react-three/drei";
+import Fetching from "./Fetching";
 
 const Loader = () => {
-  return (
-    <div>Loader</div>
-  )
-}
+  const { progress } = useProgress();
 
-export default Loader
+  return (
+    <Html>
+      <Fetching progress={progress.toFixed(1)}/>
+    </Html>
+  );
+};
+
+export default Loader;

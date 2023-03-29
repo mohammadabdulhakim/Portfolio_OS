@@ -13,7 +13,7 @@ const CursorLight = () => {
   window.addEventListener("mouseover", (e) => {
     lightRef.current.style.display = `block`;
     lightRef.current.style.boxShadow =
-      "10px 10px 200px 40px rgba(255, 255, 255, 0.3)";
+      "10px 10px 200px 40px rgba(255, 255, 255, 0.5)";
     // document.body.style.cursor = "none"
   });
 
