@@ -7,7 +7,6 @@ import MainParticles from "./MainParticles";
 
 const Intro = () => {
 
-  
 
 return (
     <section className="w-full h-screen relative mx-auto">
