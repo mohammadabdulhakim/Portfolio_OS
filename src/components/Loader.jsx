@@ -1,13 +1,13 @@
-import { Html, useProgress } from "@react-three/drei";
+import { useProgress } from "@react-three/drei";
 import Fetching from "./Fetching";
 
 const Loader = () => {
   const { progress } = useProgress();
 
   return (
-    <Html>
+    <div className="z-50 items-center justify-center flex bg-primary h-screen w-screen">
       <Fetching progress={progress.toFixed(1)}/>
-    </Html>
+    </div>
   );
 };
 

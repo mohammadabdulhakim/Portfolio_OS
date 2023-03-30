@@ -25,6 +25,8 @@ import {
     threejs,
   } from "../assets";
   
+  export const mainColor = "#1e0c79"
+  
   export const navLinks = [
     {
       id: "about",
