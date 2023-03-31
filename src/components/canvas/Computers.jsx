@@ -1,9 +1,9 @@
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
+import { Canvas, useThree } from "@react-three/fiber";
+import { Suspense, useEffect, useRef } from "react";
 
 
-const Computers = ({isPhone,lightsOn}) => {
+const Computers = ({isPhone,lightsOn,isComputerOn}) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
 
   return (
@@ -31,20 +31,32 @@ const Computers = ({isPhone,lightsOn}) => {
   );
 };
 
-const ComputersCanvas = ({isPhone,lightsOn}) => {
+const ComputersCanvas = ({isPhone,lightsOn,isComputerOn}) => {
+
+  const deg2rad = degrees => degrees * (Math.PI / 180);
+
+
+  useEffect(()=>{
+    useThree(({camera}) => {
+      camera.rotation.set(deg2rad(30), 0, 0);
+    });
+  },[isComputerOn])
+
   return (
     <Canvas
       shadows
       frameloop="demand"
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [4, 3, 5],rotation: [Math.PI /2,0,0], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
         <OrbitControls
+        enabled={!isComputerOn}
+          // enableRotate={!isComputerOn}
           enableZoom={true}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers isPhone={isPhone} lightsOn={lightsOn} />
+        <Computers isPhone={isPhone} lightsOn={lightsOn} isComputerOn={isComputerOn} />
 
       <Preload all />
     </Canvas>
