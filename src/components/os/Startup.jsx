@@ -6,7 +6,9 @@ const Startup = () => {
 
     useEffect(()=>{
         const audio = new Audio("/windowsXpStartup.mp3")
-        audio.play()
+        setTimeout(()=>{
+            audio.play()
+        },2000)
     },[])
 
   return (
