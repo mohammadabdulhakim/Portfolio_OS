@@ -1,0 +1,123 @@
+:root {
+  --mainColor: #1e0c79;
+}
+
+#startup-container {
+  background-image: url("../../assets/pcStartUpFiles/pc_bg bg.png");
+  background-size: cover;
+}
+
+#startup-container > img {
+  position: fixed;
+}
+
+#logo-circle{
+    width: 380vw;
+    max-width: 10000rem;
+    transform: translate(50%, 50%);
+    bottom: 50%;
+    right: 50%;
+
+    animation: logo-circle 4000ms both;
+}
+@keyframes logo-circle {
+    50%{
+        width: 380vw;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  
+
+#logo-pyLeft{
+    transform: translate(-50%, 50%) rotate(209deg);
+    bottom: 56px;
+    left: 120px;
+    
+    animation: logo-pyLeft 4000ms both;
+}
+@keyframes logo-pyLeft {
+    30%{
+        transform: translate(-50%, 50%) rotate(209deg);
+        bottom: 56px;
+        left: 120px;
+    }
+    50% {
+        transform: translate(-50%, 50%) rotate(151deg);
+        bottom: 56px;
+        left: 53px;
+    }
+    100% {
+      transform: translate(50%, 50%) rotate(0deg);
+      bottom: 50%;
+      left: -50%;
+      width: 100%;
+    }
+  }
+
+
+
+#logo-pyRight{
+    transform: translate(50%, 50%) rotate(151deg);
+    bottom: 56px;
+    right: 120px;
+    
+    animation: logo-pyRight 4000ms both;
+}
+@keyframes logo-pyRight {
+    30%{
+        transform: translate(50%, 50%) rotate(151deg);
+        bottom: 56px;
+        right: 120px;
+    }
+    50% {
+        transform: translate(50%, 50%) rotate(209deg);
+        bottom: 56px;
+        right: 53px;
+    }
+    100% {
+      transform: translate(50%, 50%) rotate(0deg);
+      bottom: 50%;
+      right: 50%;
+    }
+  }
+
+
+
+
+
+#logo-text {
+    transform: translate(50%, 50%);
+    bottom: 50%;
+    right: 50%;
+    
+    animation: logo-text 4000ms both;
+  }
+  @keyframes logo-text {
+    0{
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    20%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+    70%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }

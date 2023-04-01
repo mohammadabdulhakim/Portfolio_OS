@@ -1,7 +1,7 @@
 import { ComputersCanvas } from './canvas';
-import Intro from './Intro';
+import Startup from './os/Startup';
 
 export {
-  Intro,
   ComputersCanvas, 
+  Startup
 }

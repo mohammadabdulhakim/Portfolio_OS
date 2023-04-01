@@ -2,7 +2,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
 
-const Computers = ({isPhone,lightsOn,isComputerOn}) => {
+const Computers = ({isPhone,lightsOn}) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
 
   return (
@@ -30,7 +30,7 @@ const Computers = ({isPhone,lightsOn,isComputerOn}) => {
   );
 };
 
-const ComputersCanvas = ({isPhone,lightsOn,isComputerOn}) => {
+const ComputersCanvas = ({isPhone,lightsOn}) => {
 
   const deg2rad = degrees => degrees * (Math.PI / 180);
 
@@ -43,13 +43,11 @@ const ComputersCanvas = ({isPhone,lightsOn,isComputerOn}) => {
       gl={{ preserveDrawingBuffer: true }}
     >
         <OrbitControls
-        enabled={!isComputerOn}
-          // enableRotate={!isComputerOn}
           enableZoom={true}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers isPhone={isPhone} lightsOn={lightsOn} isComputerOn={isComputerOn} />
+        <Computers isPhone={isPhone} lightsOn={lightsOn} />
 
       <Preload all />
     </Canvas>
