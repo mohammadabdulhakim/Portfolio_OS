@@ -1,19 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom'
 import {Intro} from './components'
 import CursorLight from './components/CursorLight'
+import { addBtnSound } from './utils/functions';
 
 function App() {
   
   useEffect(() => {
-    const btns = document.querySelectorAll("button")
-    const audio = new Audio("https://dkihjuum4jcjr.cloudfront.net/ES_ITUNES/Button%20Switch%20Click%201/ES_Button%20Switch%20Click%201.mp3")
-
-    btns.forEach((btn)=>{
-      btn.onclick = () =>{
-        audio.play();
-      }
-    })
+    addBtnSound()
   }, []);
 
   return (

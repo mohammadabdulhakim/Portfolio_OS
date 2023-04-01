@@ -6,9 +6,10 @@ import CanvasLoader from "../src/components/Loader";
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Suspense fallback={<CanvasLoader />}>
     <App />
       </Suspense>
-  </React.StrictMode>,
+  // </React.StrictMode>
+  ,
 )

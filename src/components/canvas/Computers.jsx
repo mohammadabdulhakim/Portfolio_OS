@@ -1,6 +1,5 @@
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-import { Canvas, useThree } from "@react-three/fiber";
-import { Suspense, useEffect, useRef } from "react";
+import { Canvas } from "@react-three/fiber";
 
 
 const Computers = ({isPhone,lightsOn,isComputerOn}) => {
@@ -36,17 +35,11 @@ const ComputersCanvas = ({isPhone,lightsOn,isComputerOn}) => {
   const deg2rad = degrees => degrees * (Math.PI / 180);
 
 
-  useEffect(()=>{
-    useThree(({camera}) => {
-      camera.rotation.set(deg2rad(30), 0, 0);
-    });
-  },[isComputerOn])
-
   return (
     <Canvas
       shadows
       frameloop="demand"
-      camera={{ position: [4, 3, 5],rotation: [Math.PI /2,0,0], fov: 25 }}
+      camera={{ position: [12, 3, 5],rotation: [Math.PI /2,0,0], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
         <OrbitControls
