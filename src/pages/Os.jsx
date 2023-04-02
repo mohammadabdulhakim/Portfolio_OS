@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Startup } from "../components"
+import { OsContainer, Startup } from "../components/os"
+import {MainParticles} from "../components";
 
 const Os = () => {
     const [waitStartup, setWaitStartup] = useState(true);
@@ -7,12 +8,19 @@ const Os = () => {
     useEffect(()=>{
         setTimeout(()=>{
             setWaitStartup(false)
-        },6500)
+        },800)
     },[])
 
   return (
     <div>
-        {waitStartup && <Startup />}
+        {waitStartup ?
+        <>
+        <Startup />
+        <MainParticles/>
+        </>
+        :
+        <OsContainer />
+        }
     </div>
   )
 }

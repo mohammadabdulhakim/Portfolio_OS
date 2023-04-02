@@ -1,8 +1,8 @@
 
 import { addBtnSound } from "../utils/functions";
 import { ComputersCanvas } from "../components/canvas";
-import CursorLight from "../components/CursorLight";
-import MainParticles from "../components/MainParticles";
+import {CursorLight} from "../components";
+import {MainParticles} from "../components";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 

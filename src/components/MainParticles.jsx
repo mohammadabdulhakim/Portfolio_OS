@@ -6,6 +6,7 @@ import particlesOptions from "../particlesIntroBg.json";
 
 
 const MainParticles = () => {
+  
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);

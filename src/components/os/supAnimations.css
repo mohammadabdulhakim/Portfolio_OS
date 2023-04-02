@@ -9,6 +9,7 @@
 
 #startup-container > img {
   position: fixed;
+  user-select: none;
 }
 
 #logo-circle{

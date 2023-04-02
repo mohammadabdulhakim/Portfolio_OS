@@ -1,7 +1,9 @@
 import { ComputersCanvas } from './canvas';
-import Startup from './os/Startup';
+import MainParticles from "./MainParticles"
+import CursorLight from './CursorLight';
 
 export {
   ComputersCanvas, 
-  Startup
+  MainParticles,
+  CursorLight,
 }
