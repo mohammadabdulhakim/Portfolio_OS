@@ -8,7 +8,7 @@ const Os = () => {
     useEffect(()=>{
         setTimeout(()=>{
             setWaitStartup(false)
-        },800)
+        },8000)
     },[])
 
   return (
@@ -19,7 +19,7 @@ const Os = () => {
         <MainParticles/>
         </>
         :
-        <OsContainer />
+          <OsContainer />
         }
     </div>
   )
