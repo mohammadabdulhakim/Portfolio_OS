@@ -1,11 +1,11 @@
 import { useEffect } from "react"
-import { pcText, pcCircle, pcPyLeft, pcPyRight } from "../../assets/pcStartUpFiles"
+import { pcText, pcCircle, pcPyLeft, pcPyRight } from "/public/assets/pcStartUpFiles"
 import "./supAnimations.css"
 
 const Startup = () => {
 
     useEffect(()=>{
-        const audio = new Audio("/windowsXpStartup.mp3")
+        const audio = new Audio("/assets/sounds/windowsXpStartup.mp3")
         setTimeout(()=>{
             audio.play()
         },2000)

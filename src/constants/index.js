@@ -78,7 +78,7 @@
 //     icon: docker,
 //   },
 // ];
- 
+
 // const services = [
 //   {
 //     title: "Web Developer",
@@ -246,25 +246,29 @@
 //   },
 // ];
 
-  
-  const mainColor = "#1e0c79"
+const mainColor = "#1e0c79";
 
-  const osBgSrcs = ["https://images.unsplash.com/photo-1622737133809-d95047b9e673","https://images.unsplash.com/photo-1570026517541-258404ea3bfc","https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39","https://images.unsplash.com/photo-1663004536868-1658c44ffb12","https://images.unsplash.com/photo-1477346611705-65d1883cee1e"]
-  
-  const navLinks = [
-    {
-      id: "about",
-      title: "About",
-    },
-    {
-      id: "work",
-      title: "Work",
-    },
-    {
-      id: "contact",
-      title: "Contact",
-    },
-  ];
-  
-  
-  export { mainColor , osBgSrcs , navLinks };
+const osBgSrcs = [
+  "/src/assets/os/bg_1.png",
+  "https://images.unsplash.com/photo-1570026517541-258404ea3bfc",
+  "https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39",
+  "https://images.unsplash.com/photo-1663004536868-1658c44ffb12",
+  "https://images.unsplash.com/photo-1477346611705-65d1883cee1e",
+];  // "https://images.unsplash.com/photo-1622737133809-d95047b9e673"
+
+const navLinks = [
+  {
+    id: "about",
+    title: "About",
+  },
+  {
+    id: "work",
+    title: "Work",
+  },
+  {
+    id: "contact",
+    title: "Contact",
+  },
+];
+
+export { mainColor, osBgSrcs, navLinks };

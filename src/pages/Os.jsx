@@ -1,28 +1,44 @@
 import { useEffect, useState } from "react";
-import { OsContainer, Startup } from "../components/os"
-import {MainParticles} from "../components";
+import { OsContainer, Startup } from "../components/os";
+import { MainParticles } from "../components";
 
 const Os = () => {
-    const [waitStartup, setWaitStartup] = useState(true);
-    
-    useEffect(()=>{
-        setTimeout(()=>{
-            setWaitStartup(false)
-        },8000)
-    },[])
+  const [waitStartup, setWaitStartup] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setWaitStartup(false);
+    }, 8000);
+  }, []);
 
   return (
     <div>
-        {waitStartup ?
+      {waitStartup ? (
         <>
-        <Startup />
-        <MainParticles/>
+          <Startup />
+          <MainParticles />
         </>
-        :
-          <OsContainer />
-        }
+      ) : (
+        <OsContainer />
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Os
+export default Os;
+
+/* 
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
+
+
+---
+
+const videoScreen = useFullScreenHandle();
+videoScreen.enter()
+
+---
+
+<FullScreen handle={videoScreen}>
+  {Content}
+</FullScreen>
+*/

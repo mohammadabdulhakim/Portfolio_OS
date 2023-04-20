@@ -3,7 +3,7 @@
 }
 
 #startup-container {
-  background-image: url("../../assets/pcStartUpFiles/pc_bg bg.png");
+  background-image: url("/assets/pcStartUpFiles/pc_bg bg.png");
   background-size: cover;
 }
 
