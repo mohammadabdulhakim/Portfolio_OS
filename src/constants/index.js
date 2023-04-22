@@ -249,7 +249,7 @@
 const mainColor = "#1e0c79";
 
 const osBgSrcs = [
-  "/src/assets/os/bg_1.png",
+  "/assets/os/bg_1.png",
   "https://images.unsplash.com/photo-1570026517541-258404ea3bfc",
   "https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39",
   "https://images.unsplash.com/photo-1663004536868-1658c44ffb12",
@@ -257,6 +257,16 @@ const osBgSrcs = [
 ];  // "https://images.unsplash.com/photo-1622737133809-d95047b9e673"
 
 const navLinks = [
+  {
+    img: "github",
+    link: "https://github.com/abomisr",
+  },
+  {
+    img: "linkedin",
+    link: "https://www.linkedin.com/in/abomisr",
+  },
+];
+const navApps = [
   {
     id: "about",
     title: "About",

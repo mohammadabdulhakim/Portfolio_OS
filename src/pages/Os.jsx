@@ -8,11 +8,11 @@ const Os = () => {
   useEffect(() => {
     setTimeout(() => {
       setWaitStartup(false);
-    }, 8000);
+    }, 800);
   }, []);
 
   return (
-    <div>
+    <div className="select-none">
       {waitStartup ? (
         <>
           <Startup />
