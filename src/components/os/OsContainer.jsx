@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { osBgSrcs } from "../../constants";
 import { useOsStore } from "../../store/osStates";
 import Navbar from "./Navbar";
@@ -12,13 +12,16 @@ const OsContainer = () => {
     setBgSrc(osBgSrcs[0]);
   }, []);
 
+
+
   return (
     <div
       className="h-screen w-screen"
       style={{ backgroundImage: `url(${bgSrc})`, backgroundSize: "cover",overflow:"hidden" }}
     >
       <div className="h-[calc(100vh-78px)] relative">
-      <Program ProgramContent={Vscode} programName={"VScode"} />
+      <Program ProgramContent={Vscode} programName={"VScode"} index={0} />
+      <Program ProgramContent={Vscode} programName={"VScode"} index={1} />
       </div>
       <Navbar />
     </div>
