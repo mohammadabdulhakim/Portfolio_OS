@@ -266,19 +266,13 @@ const navLinks = [
     link: "https://www.linkedin.com/in/abomisr",
   },
 ];
-const navApps = [
+const desktopPrograms = [
   {
-    id: "about",
-    title: "About",
+    name: "VScode",
   },
   {
-    id: "work",
-    title: "Work",
-  },
-  {
-    id: "contact",
-    title: "Contact",
-  },
+    name: "Chrome"
+  }
 ];
 
-export { mainColor, osBgSrcs, navLinks };
+export { mainColor, osBgSrcs, navLinks,desktopPrograms };

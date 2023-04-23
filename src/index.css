@@ -243,3 +243,25 @@
 #navbar-btn:hover {
   background: #dadada42;
 }
+
+
+#desktop-btn {
+  height: 70px;
+  width: 70px;
+  padding: 10px;
+  transition: all 200ms ease-out;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 200ms ease;
+}
+#desktop-btn > span{
+  color: lightgray;
+  font-size: 14px;
+}
+#desktop-btn:hover {
+  background-color: #c1c1c142;
+}
