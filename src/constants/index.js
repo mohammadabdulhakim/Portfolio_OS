@@ -272,6 +272,9 @@ const desktopPrograms = [
   },
   {
     name: "Chrome"
+  },
+  {
+    name: "Edge"
   }
 ];
 
