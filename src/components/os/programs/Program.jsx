@@ -62,6 +62,10 @@ const Program = ({ ProgramContent, programName, index,minimized }) => {
       }
     },[programActiveIndex])
 
+    useEffect(()=>{
+      setProgramActiveIndex(index)
+    },[])
+
   return (
     <Rnd
       size={size}
