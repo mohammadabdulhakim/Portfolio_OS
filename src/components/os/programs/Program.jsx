@@ -5,14 +5,16 @@ import { useEffect, useState } from "react";
 import { Rnd } from "react-rnd";
 import {BiSquareRounded} from "react-icons/bi"
 import {MdClose} from "react-icons/md"
+import {BsDash} from "react-icons/bs"
+
 import { useOsStore } from "../../../store/osStates";
 
 const Program = ({ ProgramContent, programName, index }) => {
-  const [size, setSize] = useState({ width: "100%", height: "100%" });
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [size, setSize] = useState({width:window.innerWidth/2,height:window.innerHeight/2});
+  const [position, setPosition] = useState({ x: 50, y: 50 });
   const [zIndex, setZIndex] = useState(index);
 
-  const {programActiveIndex, setProgramActiveIndex} = useOsStore()
+  const {programActiveIndex, setProgramActiveIndex,openedPrograms,setOpenedPrograms} = useOsStore()
 
   
   const handleResize = (event, direction, ref, delta, position) => {
@@ -25,7 +27,9 @@ const Program = ({ ProgramContent, programName, index }) => {
     setPosition({ x: data.x, y: data.y });
   };
 
-  const minimize = () =>{
+
+  // *------------------------------------------------------
+  const maximize = () =>{
     if(typeof(size.height) == "string"){
       setPosition({x:50,y:50});
       setSize({width:window.innerWidth/2,height:window.innerHeight/2});
@@ -34,6 +38,22 @@ const Program = ({ ProgramContent, programName, index }) => {
         setPosition({x:0,y:0});
       }
     }
+    const closeProgram = () =>{
+      let newOpenedPrograms = openedPrograms.filter((p,i)=>{
+        return i !== index
+      })
+      setOpenedPrograms(newOpenedPrograms)
+    }
+    const minimize = () =>{
+      let newOpenedPrograms = openedPrograms.map((p,i)=>{
+        if(i == index) p.minimized = true
+        console.log(i,index)
+        return p;
+      })
+      setOpenedPrograms(newOpenedPrograms)
+    }
+  // !-----------------------------------------------------
+
 
     useEffect(()=>{
       if(programActiveIndex == index){
@@ -41,7 +61,6 @@ const Program = ({ ProgramContent, programName, index }) => {
       }else{
         setZIndex(10)
       }
-      console.log(index,zIndex)
     },[programActiveIndex])
 
   return (
@@ -73,8 +92,9 @@ const Program = ({ ProgramContent, programName, index }) => {
             <span>{programName}</span>
           </div>
           <div className="text-white flex flex-row gap-2">
-            <BiSquareRounded onClick={minimize} className="bg-green-500 text-green-500 hover:text-white rounded-full opacity-80 transition-all hover:opacity-100 cursor-pointer p-0.5" />
-            <MdClose className="bg-red-500 text-red-500 hover:text-white rounded-full opacity-80 transition-all hover:opacity-100 cursor-pointer" />
+            <BiSquareRounded onClick={maximize} className="bg-green-600 text-green-600 hover:text-white rounded-full opacity-80 transition-all hover:opacity-100 cursor-pointer p-0.5" />
+            <BsDash onClick={minimize} className="bg-yellow-600 text-yellow-600 hover:text-white rounded-full opacity-80 transition-all hover:opacity-100 cursor-pointer" />
+            <MdClose onClick={closeProgram} className="bg-red-600 text-red-600 hover:text-white rounded-full opacity-80 transition-all hover:opacity-100 cursor-pointer" />
           </div>
         </div>
         <div className="app-content h-full">
