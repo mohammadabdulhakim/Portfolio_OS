@@ -6,7 +6,7 @@ const useOsStore = add((set) => ({
   setBgSrc: (bgSrc) => set({bgSrc}),
   startMenu: false,
   setStartMenu: () => set((state)=> ({startMenu: !state.startMenu})),
-  openedPrograms: [{content:Vscode,name:"VScode",minimized:false},{content:Vscode,name:"VScode 2",minimized:false}],
+  openedPrograms: [{content:Vscode,name:"VScode",minimized:false},{content:Vscode,name:"VScode",minimized:false}],
   setOpenedPrograms: (openedPrograms) => set({openedPrograms}),
   programActiveIndex: 0,
   setProgramActiveIndex: (index) => set({programActiveIndex:index})

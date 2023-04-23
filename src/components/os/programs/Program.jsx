@@ -9,7 +9,7 @@ import {BsDash} from "react-icons/bs"
 
 import { useOsStore } from "../../../store/osStates";
 
-const Program = ({ ProgramContent, programName, index }) => {
+const Program = ({ ProgramContent, programName, index,minimized }) => {
   const [size, setSize] = useState({width:window.innerWidth/2,height:window.innerHeight/2});
   const [position, setPosition] = useState({ x: 50, y: 50 });
   const [zIndex, setZIndex] = useState(index);
@@ -47,7 +47,6 @@ const Program = ({ ProgramContent, programName, index }) => {
     const minimize = () =>{
       let newOpenedPrograms = openedPrograms.map((p,i)=>{
         if(i == index) p.minimized = true
-        console.log(i,index)
         return p;
       })
       setOpenedPrograms(newOpenedPrograms)
@@ -79,7 +78,7 @@ const Program = ({ ProgramContent, programName, index }) => {
         left: { height: "calc(100% + 22px)" },
         bottomLeft: { transform: "translateY(22px)" },
       }}
-      style={{boxShadow: '0 4px 8px 2px rgba(0, 0, 0, 0.3)',zIndex}}
+      style={{boxShadow: '0 4px 8px 2px rgba(0, 0, 0, 0.3)',zIndex,display:minimized && "none"}}
     >
       <div className={`app h-full drop-shadow-xl bg-[#232a6231] backdrop-blur-md`} onMouseDown={()=>setProgramActiveIndex(index)}>
         <div className="app-title p-0.5 flex flex-row items-center justify-between px-2 shadow-md">

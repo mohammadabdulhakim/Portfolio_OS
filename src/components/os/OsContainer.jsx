@@ -22,16 +22,14 @@ const OsContainer = () => {
       }}
     >
       <div className="h-[calc(100vh-78px)] relative">
-        {openedPrograms.map((p, index) => {
-          if (p && !p.minimized)
-            return (
-              <Program
-                ProgramContent={p.content}
-                programName={p.name}
-                index={index}
-              />
-            );
-        })}
+        {openedPrograms.map((p, index) => (
+          <Program
+            ProgramContent={p.content}
+            programName={p.name}
+            minimized={p.minimized}
+            index={index}
+          />
+        ))}
       </div>
       <Navbar />
     </div>
