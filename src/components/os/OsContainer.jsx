@@ -3,7 +3,7 @@ import { desktopPrograms, osBgSrcs } from "../../constants";
 import { useOsStore } from "../../store/osStates";
 import Navbar from "./Navbar";
 import Program from "./programs/Program";
-import allPrograms from "./programs"
+import allPrograms from "./programs";
 
 const OsContainer = () => {
   const { bgSrc, setBgSrc, openedPrograms, setOpenedPrograms } = useOsStore();
@@ -12,14 +12,14 @@ const OsContainer = () => {
     setBgSrc(osBgSrcs[0]);
   }, []);
 
-  const openProgram = (pName) =>{
+  const openProgram = (pName) => {
     let newProgram = {
-      content:allPrograms[pName],
-      name:pName,
-      minimized:false
-    }
-    setOpenedPrograms([...openedPrograms,newProgram])
-  }
+      content: allPrograms[pName],
+      name: pName,
+      minimized: false,
+    };
+    setOpenedPrograms([...openedPrograms, newProgram]);
+  };
 
   return (
     <div
@@ -32,8 +32,12 @@ const OsContainer = () => {
     >
       <div className="h-[calc(100vh-77px)] w-screen fixed top-0 left-0">
         <div className="grid grid-rows-3 gap-3 p-4">
-          {desktopPrograms.map((p,index) => (
-            <button id="desktop-btn" onDoubleClick={()=>openProgram(p.name)}>
+          {desktopPrograms.map((p, index) => (
+            <button
+              key={p.name}
+              id="desktop-btn"
+              onDoubleClick={() => openProgram(p.name)}
+            >
               <img src={`/assets/os/icons/${p.name}.png`} />
               <span>{p.name}</span>
             </button>
@@ -41,6 +45,7 @@ const OsContainer = () => {
         </div>
         {openedPrograms.map((p, index) => (
           <Program
+            key={p.name}
             ProgramContent={p.content}
             programName={p.name}
             minimized={p.minimized}

@@ -6,7 +6,6 @@ const Navbar = () => {
 
 
   const minimize = (index) =>{
-    console.log("clicked")
     let newOpenedPrograms = openedPrograms.map((p,i)=>{
       if(i == index){
         switch (p.minimized) {
@@ -36,7 +35,7 @@ const Navbar = () => {
           (openedPrograms.length !== 0) &&
           <>
           {openedPrograms.map((p,index)=>(
-            <button onClick={()=>minimize(index)} id="navbar-btn" className={`${p.minimized && "bg-[#ffffff78] border-b-2 border-black"}`}>
+            <button key={p.name} onClick={()=>minimize(index)} id="navbar-btn" className={`${p.minimized && "bg-[#ffffff78] border-b-2 border-black"}`}>
             <img src={`/assets/os/icons/${p.name}.png`} />
           </button>
             )) }
@@ -45,8 +44,8 @@ const Navbar = () => {
         }
         {
           navLinks.map((item)=>(
-          <a href={item.link} target="_blank" id="navbar-btn">
-            <img src={`/assets/os/icons/${item.img}.png`} />
+          <a key={item.img} href={item.link} target="_blank" id="navbar-btn">
+            <img src={`/assets/os/icons/${item.img}.png`} className="h-10" />
           </a>
           ))
         }

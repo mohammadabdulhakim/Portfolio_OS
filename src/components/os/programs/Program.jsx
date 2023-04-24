@@ -10,8 +10,10 @@ import {BsDash} from "react-icons/bs"
 import { useOsStore } from "../../../store/osStates";
 
 const Program = ({ ProgramContent, programName, index,minimized }) => {
+  let initPosition = { x: Math.floor(Math.random()*300), y: Math.floor(Math.random()*250) }
+  
   const [size, setSize] = useState({width:window.innerWidth/2,height:window.innerHeight/2});
-  const [position, setPosition] = useState({ x: 50, y: 50 });
+  const [position, setPosition] = useState(initPosition);
   const [zIndex, setZIndex] = useState(index);
 
   const {programActiveIndex, setProgramActiveIndex,openedPrograms,setOpenedPrograms} = useOsStore()
@@ -31,7 +33,7 @@ const Program = ({ ProgramContent, programName, index,minimized }) => {
   // *------------------------------------------------------
   const maximize = () =>{
     if(typeof(size.height) == "string"){
-      setPosition({x:50,y:50});
+      setPosition(initPosition);
       setSize({width:window.innerWidth/2,height:window.innerHeight/2});
     }else{
         setSize({width:"100%",height:"100%"});
