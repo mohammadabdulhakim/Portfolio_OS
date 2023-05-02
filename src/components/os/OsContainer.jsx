@@ -6,7 +6,7 @@ import Program from "./programs/Program";
 import allPrograms from "./programs";
 
 const OsContainer = () => {
-  const { bgSrc, setBgSrc, openedPrograms, setOpenedPrograms } = useOsStore();
+  const { bgSrc, setBgSrc, openedPrograms, setOpenedPrograms,isClicked,setIsClicked } = useOsStore();
 
   useEffect(() => {
     setBgSrc(osBgSrcs[0]);
@@ -37,6 +37,8 @@ const OsContainer = () => {
               key={p.name}
               id="desktop-btn"
               onDoubleClick={() => openProgram(p.name)}
+              onClick={()=>setIsClicked(p.name)}
+              style={isClicked === p.name ? {backgroundColor:"#c1c1c161"}:{}}
             >
               <img src={`/assets/os/icons/${p.name}.png`} />
               <span>{p.name}</span>

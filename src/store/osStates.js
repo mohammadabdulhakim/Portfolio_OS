@@ -9,7 +9,10 @@ const useOsStore = add((set) => ({
   openedPrograms: [],
   setOpenedPrograms: (openedPrograms) => set({openedPrograms}),
   programActiveIndex: 0,
-  setProgramActiveIndex: (index) => set({programActiveIndex:index})
+  setProgramActiveIndex: (index) => set({programActiveIndex:index}),
+  isClicked: "",
+  setIsClicked: (clicked) => set({isClicked:clicked}),
+  closeAllClicked: () => set({isClicked:""})
 }));
 
 export {

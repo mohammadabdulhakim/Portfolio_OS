@@ -1,8 +1,12 @@
+import moment from "moment";
 import { navLinks } from "../../constants";
 import { useOsStore } from "../../store/osStates";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const { openedPrograms, setOpenedPrograms } = useOsStore();
+
+  const [momentLTS, setMomentLTS] = useState("");
 
 
   const minimize = (index) =>{
@@ -22,9 +26,17 @@ const Navbar = () => {
     setOpenedPrograms(newOpenedPrograms)
   }
 
+  useEffect(()=>{
+    let momentLTSInterval = setInterval(() => {
+      setMomentLTS(moment().format('LTS'))
+    }, 1000);
+
+    return ()=> clearInterval(momentLTSInterval)
+  },[momentLTS])
+
   return (
-    <div className="z-[99999] fixed bottom-0 left-0 right-0 h-[50px] bg-[#1e0c7944] backdrop-blur-md flex items-center justify-between md:px-2 px-1">
-      <div id="navbar-left">left</div>
+    <div className="z-[99999] fixed bottom-0 left-0 right-0 h-[50px] bg-[#1e0c7944] backdrop-blur-md flex items-center justify-between md:px-2 px-1 overflow-hidden">
+      <div id="navbar-left"></div>
 
       <div id="navbar-bottom" className="bg-[#99b6df52] h-full min-w-[100px] px-2 py-0.5 rounded-md flex items-center justify-center gap-2">
         <button id="navbar-btn">
@@ -45,13 +57,20 @@ const Navbar = () => {
         {
           navLinks.map((item)=>(
           <a key={item.img} href={item.link} target="_blank" id="navbar-btn">
-            <img src={`/assets/os/icons/${item.img}.png`} className="h-10" />
+            <img src={`/assets/os/icons/${item.img}.png`} className="h-10 rounded-lg" />
           </a>
           ))
         }
       </div>
 
-      <div id="navbar-right">right</div>
+      <div id="navbar-right" className="flex flex-col items-center justify-center text-[13px] text-slate-200 bg-gray-100/5 hover:bg-gray-100/10 transition-all rounded-md p-2">
+        <span className="font-light">
+        {momentLTS}
+        </span>
+        <span>
+        {moment().format('LL')}
+        </span>
+      </div>
     </div>
   );
 };

@@ -269,6 +269,10 @@ const navLinks = [
     img: "Medium",
     link: "https://www.medium.com/@abomisr",
   },
+  {
+    img: "DevTo",
+    link: "https://dev.to/abomisr",
+  },
 ];
 const desktopPrograms = [
   {
