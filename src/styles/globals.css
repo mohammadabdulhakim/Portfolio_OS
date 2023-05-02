@@ -1,6 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
   --mainColor: #1e0c79;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color-scheme: dark;
+  font-family: "Catamaran", sans-serif;
+  scroll-behavior: smooth;
+}
+
+#btn1 {
+  padding: 8px;
+  border-radius: 15px;
+  outline: 0px solid white;
+  outline-offset: 0px;
+  background: linear-gradient(160deg, var(--mainColor) 60%, #0000002b);
+  box-shadow: 0px 0px 10px 0px rgba(81, 0, 255, 0.7);
+  transition: 300ms ease-in-out;
+  opacity: 0.95;
+}
+
+#btn1:hover {
+  outline: 2px solid rgba(255, 255, 255, 0);
+  outline-offset: 10px;
+  opacity: 1;
+  box-shadow: 0px 0px 20px 5px rgba(81, 0, 255, 0.7);
+}
+
+#btn1:active {
+  transform: translate(var(--tw-translate-x)) scale(0.9);
+  box-shadow: 0px 0px 50px 40px rgba(81, 0, 255, 0.7);
+}
+
+#navbar-btn {
+  height: 100%;
+  width: 44px;
+  padding: 2px;
+  transition: all 200ms ease-out;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#navbar-btn:hover {
+  background: #dadada42;
+}
+
+
+#desktop-btn {
+  height: 70px;
+  width: 70px;
+  padding: 10px;
+  transition: all 200ms ease-out;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 200ms ease;
+}
+#desktop-btn > span{
+  color: lightgray;
+  font-size: 14px;
+}
+#desktop-btn:hover {
+  background-color: #c1c1c142;
+}
+
+
+/** ================> [ start up animations ] <============================*/
 
 #startup-container {
   background-image: url("/assets/pcStartUpFiles/pc_bg bg.png");
@@ -122,3 +208,4 @@
       opacity: 1;
     }
   }
+/*! ==================> [END OF START UP ANIMATIONS] <============================ */

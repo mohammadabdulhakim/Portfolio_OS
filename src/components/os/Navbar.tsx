@@ -1,6 +1,6 @@
 import moment from "moment";
-import { navLinks } from "../../constants";
-import { useOsStore } from "../../store/osStates";
+import { navLinks } from "../../../constants/index.mjs";
+import { useOsStore } from "../../../libs/osStates.mjs";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {

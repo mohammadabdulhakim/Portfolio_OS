@@ -1,3 +1,46 @@
+const mainColor = "#1e0c79";
+
+const osBgSrcs = [
+  "/assets/os/bg_1.png",
+  "https://images.unsplash.com/photo-1570026517541-258404ea3bfc",
+  "https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39",
+  "https://images.unsplash.com/photo-1663004536868-1658c44ffb12",
+  "https://images.unsplash.com/photo-1477346611705-65d1883cee1e",
+];  // "https://images.unsplash.com/photo-1622737133809-d95047b9e673"
+
+const navLinks = [
+  {
+    img: "github",
+    link: "https://github.com/abomisr",
+  },
+  {
+    img: "linkedin",
+    link: "https://www.linkedin.com/in/abomisr",
+  },
+  {
+    img: "Medium",
+    link: "https://www.medium.com/@abomisr",
+  },
+  {
+    img: "DevTo",
+    link: "https://dev.to/abomisr",
+  },
+];
+const desktopPrograms = [
+  {
+    name: "VScode",
+  },
+  {
+    name: "Chrome"
+  },
+  {
+    name: "Edge"
+  }
+];
+
+export { mainColor, osBgSrcs, navLinks,desktopPrograms };
+
+
 // import {
 //     mobile,
 //     backend,
@@ -245,45 +288,3 @@
 //     source_code_link: "https://github.com/",
 //   },
 // ];
-
-const mainColor = "#1e0c79";
-
-const osBgSrcs = [
-  "/assets/os/bg_1.png",
-  "https://images.unsplash.com/photo-1570026517541-258404ea3bfc",
-  "https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39",
-  "https://images.unsplash.com/photo-1663004536868-1658c44ffb12",
-  "https://images.unsplash.com/photo-1477346611705-65d1883cee1e",
-];  // "https://images.unsplash.com/photo-1622737133809-d95047b9e673"
-
-const navLinks = [
-  {
-    img: "github",
-    link: "https://github.com/abomisr",
-  },
-  {
-    img: "linkedin",
-    link: "https://www.linkedin.com/in/abomisr",
-  },
-  {
-    img: "Medium",
-    link: "https://www.medium.com/@abomisr",
-  },
-  {
-    img: "DevTo",
-    link: "https://dev.to/abomisr",
-  },
-];
-const desktopPrograms = [
-  {
-    name: "VScode",
-  },
-  {
-    name: "Chrome"
-  },
-  {
-    name: "Edge"
-  }
-];
-
-export { mainColor, osBgSrcs, navLinks,desktopPrograms };

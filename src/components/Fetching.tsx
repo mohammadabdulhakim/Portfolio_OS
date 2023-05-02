@@ -1,4 +1,4 @@
-const Fetching = ({ progress }) => {
+const Fetching = ({ progress }:{progress:number}) => {
   return (
     <div className="relative h-[100px] w-[100px] inline-block">
       <div
