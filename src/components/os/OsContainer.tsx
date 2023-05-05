@@ -1,12 +1,22 @@
 import { useEffect, useState } from "react";
+
 import { desktopPrograms, osBgSrcs } from "../../../constants/index.mjs";
-import { useOsStore } from "../../../libs/osStates.mjs";
+import { useOsStore } from "../../../libs/osStates";
 import Navbar from "./Navbar";
 import Program from "./programs/Program";
 import allPrograms from "./programs";
+import ContextMenu from "../ContextMenu";
 
 const OsContainer: React.FC = () => {
-  const { bgSrc, setBgSrc, openedPrograms, setOpenedPrograms, isClicked, setIsClicked } = useOsStore();
+  const {
+    bgSrc,
+    setBgSrc,
+    openedPrograms,
+    setOpenedPrograms,
+    isClicked,
+    setIsClicked,
+    iconSize,
+  } = useOsStore();
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -28,7 +38,7 @@ const OsContainer: React.FC = () => {
       content: allPrograms[pName],
       name: pName,
       minimized: false,
-    };
+    }
     setOpenedPrograms([...openedPrograms, newProgram]);
   };
 
@@ -43,6 +53,7 @@ const OsContainer: React.FC = () => {
   return (
     <div
       className="h-screen w-screen"
+      id="os-container"
       style={{
         backgroundImage: `url(${bgSrc})`,
         backgroundSize: "cover",
@@ -50,6 +61,7 @@ const OsContainer: React.FC = () => {
       }}
     >
       <div className="h-[calc(100vh-77px)] w-screen fixed top-0 left-0">
+      <ContextMenu divId="os-container" />
         <div className="grid grid-rows-3 gap-3 p-4">
           {desktopPrograms.map((p, index) => (
             <button
@@ -57,9 +69,20 @@ const OsContainer: React.FC = () => {
               id="desktop-btn"
               onDoubleClick={() => openProgram(p.name)}
               onClick={() => handleClick(p.name)}
-              style={isClicked === p.name ? { backgroundColor: "#c1c1c161" } : {}}
+              style={
+                isClicked === p.name
+                  ? {
+                      backgroundColor: "#c1c1c161",
+                      width: iconSize,
+                      height: iconSize,
+                    }
+                  : { width: iconSize, height: iconSize }
+              }
             >
-              <img src={`/assets/os/icons/${p.name}.png`} alt={`${p.name} icon`} />
+              <img
+                src={`/assets/os/icons/${p.name}.png`}
+                alt={`${p.name} icon`}
+              />
               <span>{p.name}</span>
             </button>
           ))}

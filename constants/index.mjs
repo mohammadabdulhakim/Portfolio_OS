@@ -26,6 +26,7 @@ const navLinks = [
     link: "https://dev.to/abomisr",
   },
 ];
+
 const desktopPrograms = [
   {
     name: "VScode",

@@ -65,8 +65,6 @@
 
 
 #desktop-btn {
-  height: 70px;
-  width: 70px;
   padding: 10px;
   transition: all 200ms ease-out;
   border-radius: 4px;

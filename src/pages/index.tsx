@@ -3,7 +3,6 @@ import { ComputersCanvas, CursorLight, Loader } from "@/components";
 import MainParticles from "@/components/particles/MainParticles";
 import Head from "next/head";
 import { addBtnSound } from "../../utils/functions";
-import Router from "next/router";
 import Link from "next/link";
 
 

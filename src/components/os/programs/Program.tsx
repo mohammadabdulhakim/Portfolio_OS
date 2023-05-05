@@ -7,7 +7,7 @@ import {BiSquareRounded} from "react-icons/bi"
 import {MdClose} from "react-icons/md"
 import {BsDash} from "react-icons/bs"
 
-import { useOsStore } from "../../../../libs/osStates.mjs";
+import { useOsStore } from "../../../../libs/osStates";
 
 const Program = ({ ProgramContent, programName, index,minimized }) => {
   let initPosition = { x: Math.floor(Math.random()*300), y: Math.floor(Math.random()*250) }
