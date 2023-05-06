@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { MouseEventHandler, useEffect } from "react"
 
 
 const Startup = () => {
@@ -10,8 +10,9 @@ const Startup = () => {
         },2000)
     },[])
 
-  return (
-    <div id="startup-container" className={`w-screen h-screen overflow-hidden`}>
+
+    return (
+    <div id="startup-container" className={`w-screen h-screen overflow-hidden`} >
         <img id="logo-circle" src={"/assets/pcStartUpFiles/pc_bg-circle.png"} className="" />        
         <img id="logo-pyLeft" src={"/assets/pcStartUpFiles/pc_bg-left.png"} className="" />        
         <img id="logo-pyRight" src={"/assets/pcStartUpFiles/pc_bg-right.png"} className="" />

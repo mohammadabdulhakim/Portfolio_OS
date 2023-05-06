@@ -52,7 +52,7 @@ const OsContainer: React.FC = () => {
 
   return (
     <div
-      className="h-screen w-screen"
+      className="h-screen w-screen relative"
       id="os-container"
       style={{
         backgroundImage: `url(${bgSrc})`,

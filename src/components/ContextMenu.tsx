@@ -1,15 +1,27 @@
 import Menu, { MenuItem, SubMenu, Divider } from "rc-menu";
 import "rc-menu/assets/index.css";
-import { CSSProperties, MouseEventHandler, useEffect, useState } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 
 function ContextMenu({ divId }: { divId: string }) {
   const [hidden, setHidden] = useState(true);
-  const [selectedItem, setSelectedItem] = useState("");
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const handleClick = (e:MouseEvent) => {
+  const handleClick = (e: MouseEvent) => {
     e.preventDefault();
-    setMousePosition({ x: e.clientX, y: e.clientY });
+    let contextMenuNode = document.getElementById("context-menu");
+
+    let x = e.offsetX,
+      y = e.offsetY;
+
+    let windowH = window.innerHeight,
+      windowW = window.innerWidth,
+      cmW = contextMenuNode?.offsetWidth || 0,
+      cmH = contextMenuNode?.offsetHeight || 0;
+
+    x = x > windowW - cmW ? windowW - cmW : x;
+    y = y > windowH - cmH - 50 ? windowH - cmH - 50 : y;
+
+    setMousePosition({ x, y });
     setHidden(false);
   };
 
@@ -23,14 +35,9 @@ function ContextMenu({ divId }: { divId: string }) {
     };
   }, []);
 
-  const handleMenuClick = (item: { key: string }) => {
-    setSelectedItem(item.key);
-    setHidden(false);
-  };
-
   const handleClickOutside = (e: MouseEvent | TouchEvent) => {
     const target = e.target as HTMLElement;
-    if (!hidden && !target.closest(".rc-menu")) {
+    if (!hidden && !target.closest("#context-menu")) {
       setHidden(true);
     }
   };
@@ -44,26 +51,32 @@ function ContextMenu({ divId }: { divId: string }) {
     position: "fixed",
     left: mousePosition.x,
     top: mousePosition.y,
+    border: "none",
+    backgroundColor: "rgba(100,100,100,0.3)",
+    padding: "10px",
+    color: "white",
+    backdropFilter: "blur(14px)",
+    width:"230px"
+  };
+
+  const handleMenuClick = (action: ()=> void) => {
+    action()
+    setHidden(false);
   };
 
   const menu = (
-    <Menu
-      style={menuStyle}
-      onClick={handleMenuClick}
-      hidden={hidden}
-      selectable={false}
-    >
-      <MenuItem key="1">Menu Item 1</MenuItem>
-      <MenuItem key="2">Menu Item 2</MenuItem>
-      <SubMenu title="Menu Group">
-        <MenuItem key="3">Menu Item 3</MenuItem>
-        <Divider />
-        <MenuItem key="4">Menu Item 4</MenuItem>
-      </SubMenu>
-    </Menu>
+    <div id="context-menu" className="text-[13px] font-extralight rounded-md transition-all duration-75 flex items-center justify-center gap-2 flex-col" style={menuStyle}>
+      <ul className="relative w-full">
+        <li className="flex items-center justify-start gap-1 cursor-pointer hover:bg-[#ffffff1c] p-2 rounded-md transition-all" onClick={handleMenuClick}>
+          <span className="material-symbols-outlined text-[20px]">autorenew</span>
+          <span>Refresh</span>
+        </li>
+      </ul>
+      <span className="material-symbols-outlined">arrow_forward_ios</span>
+    </div>
   );
 
-  return <>{menu}</>;
+  return <>{!hidden && menu}</>;
 }
 
 export default ContextMenu;

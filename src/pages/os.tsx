@@ -10,13 +10,14 @@ const os = () => {
   useEffect(() => {
     setTimeout(() => {
       setWaitStartup(false);
-    }, 8000);
+    }, 800);
   }, []);
 
   return (
     <div className="select-none">
        <Head>
         <title>Mohammad | OS</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       </Head>
       {waitStartup ? (
         <div onContextMenu={(e)=>e.preventDefault()}>
