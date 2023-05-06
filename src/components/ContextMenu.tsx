@@ -2,7 +2,7 @@ import { CSSProperties, useEffect, useState } from "react";
 import { contextMenuItems } from "../../constants/index.mjs";
 import { useOsStore } from "../../libs/osStates";
 
-function ContextMenu({ divId }: { divId: string }) {
+function ContextMenu({ divId,openProgram }: { divId: string,openProgram:(pName:string)=>void }) {
   const { setIconSize } = useOsStore();
   const [hidden, setHidden] = useState(true);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -73,7 +73,7 @@ function ContextMenu({ divId }: { divId: string }) {
     setHidden(true);
   };
 
-  const menuItems = contextMenuItems({ setIconSize });
+  const menuItems = contextMenuItems({ setIconSize,openProgram });
 
   const menu = (
     <div
@@ -83,6 +83,8 @@ function ContextMenu({ divId }: { divId: string }) {
     >
       <ul className="relative w-full">
         {menuItems.map((item) => (
+          <>
+          {item.dividerBefore && <span className="m-1 mx-2 bg-gray-400 block h-[1px]" />}
           <div
             className="flex cursor-pointer hover:bg-[#ffffff1c] p-2 rounded-md transition-all justify-between items-center relative"
             onMouseEnter={() => setActiveSubMenu(item.title)}
@@ -119,6 +121,7 @@ function ContextMenu({ divId }: { divId: string }) {
               </>
             )}
           </div>
+          </>
         ))}
       </ul>
     </div>

@@ -61,7 +61,7 @@ const OsContainer: React.FC = () => {
       }}
     >
       <div className="h-[calc(100vh-77px)] w-screen fixed top-0 left-0">
-        <ContextMenu divId="os-container" />
+        <ContextMenu divId="os-container" openProgram={openProgram} />
         <div className="grid grid-rows-3 gap-3 p-4">
           {desktopPrograms.map((p, index) => (
             <button

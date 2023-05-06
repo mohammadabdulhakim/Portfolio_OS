@@ -49,7 +49,34 @@ const desktopPrograms = [
   },
 ];
 
-const contextMenuItems = ({setIconSize}) => [
+const contextMenuItems = ({setIconSize,openProgram}) => [
+  {
+    title: "View",
+    icon: "uil-apps",
+    subMenu: [
+      {
+        title: "Large",
+        icon: "uil-anchor",
+        action: () => {
+          setIconSize("40px");
+        },
+      },
+      {
+        title: "Medium",
+        icon: "uil-balance-scale",
+        action: () => {
+          setIconSize("30px");
+        },
+      },
+      {
+        title: "Small",
+        icon: "uil-compress-alt",
+        action: () => {
+          setIconSize("20px");
+        },
+      },
+    ],
+  },
   {
     title: "Refresh",
     icon: "uil-sync",
@@ -82,34 +109,14 @@ const contextMenuItems = ({setIconSize}) => [
         },
       },
     ],
+    dividerBefore:true,
   },
   {
-    title: "View",
-    icon: "uil-apps",
-    subMenu: [
-      {
-        title: "Large",
-        icon: "uil-anchor",
-        action: () => {
-          setIconSize("40px");
-        },
-      },
-      {
-        title: "Medium",
-        icon: "uil-balance-scale",
-        action: () => {
-          setIconSize("30px");
-        },
-      },
-      {
-        title: "Small",
-        icon: "uil-compress-alt",
-        action: () => {
-          setIconSize("20px");
-        },
-      },
-    ],
-  },
+    title:"Appearance",
+    icon:"uil-eye",
+    dividerBefore:true,
+    action:()=>openProgram("Appearance")
+  }
 ];
 
 
