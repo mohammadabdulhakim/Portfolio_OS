@@ -1,4 +1,5 @@
 import {create as add} from 'zustand';
+import { osBgSrcs } from '../constants/index.mjs';
 
 
 type osStoreType = {
@@ -18,7 +19,7 @@ setIconSize: (iconSize:string)=>void,
 }
 
 const useOsStore = add<osStoreType>()((set) => ({
-  bgSrc: "",
+  bgSrc: osBgSrcs[0],
   setBgSrc: (bgSrc) => set({bgSrc}),
   startMenu: false,
   setStartMenu: () => set((state)=> ({startMenu: !state.startMenu})),

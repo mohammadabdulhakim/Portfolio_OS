@@ -10,7 +10,6 @@ import ContextMenu from "../ContextMenu";
 const OsContainer: React.FC = () => {
   const {
     bgSrc,
-    setBgSrc,
     openedPrograms,
     setOpenedPrograms,
     isClicked,
@@ -20,8 +19,6 @@ const OsContainer: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setBgSrc(osBgSrcs[0]);
-
     setIsMobile(window.innerWidth < 500);
 
     const handleResize = () => {
