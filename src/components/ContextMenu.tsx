@@ -2,7 +2,13 @@ import { CSSProperties, useEffect, useState } from "react";
 import { contextMenuItems } from "../../constants/index.mjs";
 import { useOsStore } from "../../libs/osStates";
 
-function ContextMenu({ divId,openProgram }: { divId: string,openProgram:(pName:string)=>void }) {
+function ContextMenu({
+  divId,
+  openProgram,
+}: {
+  divId: string;
+  openProgram: (pName: string) => void;
+}) {
   const { setIconSize } = useOsStore();
   const [hidden, setHidden] = useState(true);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -73,7 +79,7 @@ function ContextMenu({ divId,openProgram }: { divId: string,openProgram:(pName:s
     setHidden(true);
   };
 
-  const menuItems = contextMenuItems({ setIconSize,openProgram });
+  const menuItems = contextMenuItems({ setIconSize, openProgram });
 
   const menu = (
     <div
@@ -84,43 +90,50 @@ function ContextMenu({ divId,openProgram }: { divId: string,openProgram:(pName:s
       <ul className="relative w-full">
         {menuItems.map((item) => (
           <>
-          {item.dividerBefore && <span className="m-1 mx-2 bg-gray-400 block h-[1px]" />}
-          <div
-            className="flex cursor-pointer hover:bg-[#ffffff1c] p-2 rounded-md transition-all justify-between items-center relative"
-            onMouseEnter={() => setActiveSubMenu(item.title)}
-            onMouseLeave={() => setActiveSubMenu("")}
-            onClick={() => !item.subMenu && handleMenuClick(item.action)}
-          >
-            <li
-              className={`${item.title} ok flex items-center justify-start gap-1`}
-            >
-              <i className={`uil ${item.icon}`}></i>
-              <span>{item.title}</span>
-            </li>
-            {item.subMenu && <i className="uil-angle-right"></i>}
-            {item.subMenu && activeSubMenu === item.title && (
-              <>
-                <div
-                  style={subMenuStyle}
-                  className={`absolute right-[-150px] -top-2 drop-shadow-md text-[15px] font-extralight rounded-md transition-all duration-75 flex items-center justify-center gap-2 flex-col`}
-                >
-                  <ul className="relative w-full">
-                    {item.subMenu.map((subItem) => (
-                      <div
-                        className="flex cursor-pointer hover:bg-[#ffffff1c] p-2 rounded-md transition-all justify-between items-center"
-                        onClick={() => handleMenuClick(subItem.action)}
-                      >
-                        <li className="flex items-center justify-start gap-1">
-                          <i className={`uil ${subItem.icon}`}></i>
-                          <span>{subItem.title}</span>
-                        </li>
-                      </div>
-                    ))}
-                  </ul>
-                </div>
-              </>
+            {item.dividerBefore && (
+              <span
+                key={item.title}
+                className="m-1 mx-2 bg-gray-400 block h-[1px]"
+              />
             )}
-          </div>
+            <div
+              key={item.title}
+              className="flex cursor-pointer hover:bg-[#ffffff1c] p-2 rounded-md transition-all justify-between items-center relative"
+              onMouseEnter={() => setActiveSubMenu(item.title)}
+              onMouseLeave={() => setActiveSubMenu("")}
+              onClick={() => !item.subMenu && handleMenuClick(item.action)}
+            >
+              <li
+                className={`${item.title} ok flex items-center justify-start gap-1`}
+              >
+                <i className={`uil ${item.icon}`}></i>
+                <span>{item.title}</span>
+              </li>
+              {item.subMenu && <i className="uil-angle-right"></i>}
+              {item.subMenu && activeSubMenu === item.title && (
+                <>
+                  <div
+                    style={subMenuStyle}
+                    className={`absolute right-[-150px] -top-2 drop-shadow-md text-[15px] font-extralight rounded-md transition-all duration-75 flex items-center justify-center gap-2 flex-col`}
+                  >
+                    <ul className="relative w-full">
+                      {item.subMenu.map((subItem) => (
+                        <div
+                        key={subItem.title}
+                          className="flex cursor-pointer hover:bg-[#ffffff1c] p-2 rounded-md transition-all justify-between items-center"
+                          onClick={() => handleMenuClick(subItem.action)}
+                        >
+                          <li className="flex items-center justify-start gap-1">
+                            <i className={`uil ${subItem.icon}`}></i>
+                            <span>{subItem.title}</span>
+                          </li>
+                        </div>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              )}
+            </div>
           </>
         ))}
       </ul>
