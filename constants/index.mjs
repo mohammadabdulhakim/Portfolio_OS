@@ -1,3 +1,5 @@
+
+
 const mainColor = "#1e0c79";
 
 const osBgSrcs = [
@@ -6,24 +8,32 @@ const osBgSrcs = [
   "https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39",
   "https://images.unsplash.com/photo-1663004536868-1658c44ffb12",
   "https://images.unsplash.com/photo-1477346611705-65d1883cee1e",
-];  // "https://images.unsplash.com/photo-1622737133809-d95047b9e673"
+]; // "https://images.unsplash.com/photo-1622737133809-d95047b9e673"
+
+const socialLinks = {
+  githubLink:"https://github.com/abomisr",
+  linkedinLink:"https://www.linkedin.com/in/abomisr",
+  mediumLink:"https://www.medium.com/@abomisr",
+  devToLink:"https://dev.to/abomisr"
+
+}
 
 const navLinks = [
   {
     img: "github",
-    link: "https://github.com/abomisr",
+    link: socialLinks.githubLink,
   },
   {
     img: "linkedin",
-    link: "https://www.linkedin.com/in/abomisr",
+    link: socialLinks.linkedinLink,
   },
   {
     img: "Medium",
-    link: "https://www.medium.com/@abomisr",
+    link: socialLinks.mediumLink,
   },
   {
     img: "DevTo",
-    link: "https://dev.to/abomisr",
+    link: socialLinks.devToLink,
   },
 ];
 
@@ -32,15 +42,78 @@ const desktopPrograms = [
     name: "VScode",
   },
   {
-    name: "Chrome"
+    name: "Chrome",
   },
   {
-    name: "Edge"
-  }
+    name: "Edge",
+  },
 ];
 
-export { mainColor, osBgSrcs, navLinks,desktopPrograms };
+const contextMenuItems = ({setIconSize}) => [
+  {
+    title: "Refresh",
+    icon: "uil-sync",
+    subMenu: null,
+    action: () => {},
+  },
+  {
+    title: "Links",
+    icon: "uil-link",
+    subMenu: [
+      {
+        title: "Github",
+        icon: "uil-github",
+        action: () => {
+          window.open(socialLinks.githubLink, "_blank");
+        },
+      },
+      {
+        title: "Linkedin",
+        icon: "uil-linkedin",
+        action: () => {
+          window.open(socialLinks.linkedinLink, "_blank");
+        },
+      },
+      {
+        title: "DevTo",
+        icon: "uil-brackets-curly",
+        action: () => {
+          window.open(socialLinks.devToLink, "_blank");
+        },
+      },
+    ],
+  },
+  {
+    title: "View",
+    icon: "uil-apps",
+    subMenu: [
+      {
+        title: "Large",
+        icon: "uil-anchor",
+        action: () => {
+          setIconSize("40px");
+        },
+      },
+      {
+        title: "Medium",
+        icon: "uil-balance-scale",
+        action: () => {
+          setIconSize("30px");
+        },
+      },
+      {
+        title: "Small",
+        icon: "uil-compress-alt",
+        action: () => {
+          setIconSize("20px");
+        },
+      },
+    ],
+  },
+];
 
+
+export { mainColor, osBgSrcs, navLinks, desktopPrograms,contextMenuItems, socialLinks };
 
 // import {
 //     mobile,

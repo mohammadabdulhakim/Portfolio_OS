@@ -61,10 +61,11 @@ const OsContainer: React.FC = () => {
       }}
     >
       <div className="h-[calc(100vh-77px)] w-screen fixed top-0 left-0">
-      <ContextMenu divId="os-container" />
+        <ContextMenu divId="os-container" />
         <div className="grid grid-rows-3 gap-3 p-4">
           {desktopPrograms.map((p, index) => (
             <button
+              className={`w-[80px]`}
               key={p.name}
               id="desktop-btn"
               onDoubleClick={() => openProgram(p.name)}
@@ -73,15 +74,14 @@ const OsContainer: React.FC = () => {
                 isClicked === p.name
                   ? {
                       backgroundColor: "#c1c1c161",
-                      width: iconSize,
-                      height: iconSize,
                     }
-                  : { width: iconSize, height: iconSize }
+                  : {}
               }
             >
               <img
                 src={`/assets/os/icons/${p.name}.png`}
                 alt={`${p.name} icon`}
+                style={{ width: iconSize, height: iconSize }}
               />
               <span>{p.name}</span>
             </button>

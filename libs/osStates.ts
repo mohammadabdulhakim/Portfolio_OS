@@ -1,5 +1,6 @@
 import {create as add} from 'zustand';
 
+
 type osStoreType = {
 bgSrc : string,
 setBgSrc:(bgSrc: string)=>void,
@@ -28,9 +29,11 @@ const useOsStore = add<osStoreType>()((set) => ({
   isClicked: "",
   setIsClicked: (clicked) => set({isClicked:clicked}),
   closeAllClicked: () => set({isClicked:""}),
-  iconSize: "70px",
+  iconSize: "30px",
   setIconSize: (iconSize)=> set({iconSize})
 }));
+
+
 
 export {
   useOsStore,

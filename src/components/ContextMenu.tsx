@@ -1,10 +1,12 @@
-import Menu, { MenuItem, SubMenu, Divider } from "rc-menu";
-import "rc-menu/assets/index.css";
 import { CSSProperties, useEffect, useState } from "react";
+import { contextMenuItems } from "../../constants/index.mjs";
+import { useOsStore } from "../../libs/osStates";
 
 function ContextMenu({ divId }: { divId: string }) {
+  const { setIconSize } = useOsStore();
   const [hidden, setHidden] = useState(true);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
 
   const handleClick = (e: MouseEvent) => {
     e.preventDefault();
@@ -51,28 +53,74 @@ function ContextMenu({ divId }: { divId: string }) {
     position: "fixed",
     left: mousePosition.x,
     top: mousePosition.y,
-    border: "none",
     backgroundColor: "rgba(100,100,100,0.3)",
     padding: "10px",
     color: "white",
-    backdropFilter: "blur(14px)",
-    width:"230px"
+    backdropFilter: "blur(10px)",
+    width: "230px",
   };
 
-  const handleMenuClick = (action: ()=> void) => {
-    action()
-    setHidden(false);
+  const subMenuStyle: CSSProperties = {
+    backgroundColor: "rgba(100,100,100,0.3)",
+    padding: "10px",
+    color: "white",
+    backdropFilter: "blur(10px)",
+    width: "150px",
   };
+
+  const handleMenuClick = (action: () => void) => {
+    action();
+    setHidden(true);
+  };
+
+  const menuItems = contextMenuItems({ setIconSize });
 
   const menu = (
-    <div id="context-menu" className="text-[13px] font-extralight rounded-md transition-all duration-75 flex items-center justify-center gap-2 flex-col" style={menuStyle}>
+    <div
+      id="context-menu"
+      className="drop-shadow-md text-[15px] font-extralight rounded-md transition-all duration-75 flex items-center justify-center gap-2 flex-col"
+      style={menuStyle}
+    >
       <ul className="relative w-full">
-        <li className="flex items-center justify-start gap-1 cursor-pointer hover:bg-[#ffffff1c] p-2 rounded-md transition-all" onClick={handleMenuClick}>
-          <span className="material-symbols-outlined text-[20px]">autorenew</span>
-          <span>Refresh</span>
-        </li>
+        {menuItems.map((item) => (
+          <div
+            className="flex cursor-pointer hover:bg-[#ffffff1c] p-2 rounded-md transition-all justify-between items-center relative"
+            onMouseEnter={() => setActiveSubMenu(item.title)}
+            onMouseLeave={() => setActiveSubMenu("")}
+            onClick={() => !item.subMenu && handleMenuClick(item.action)}
+          >
+            <li
+              className={`${item.title} ok flex items-center justify-start gap-1`}
+            >
+              <i className={`uil ${item.icon}`}></i>
+              <span>{item.title}</span>
+            </li>
+            {item.subMenu && <i className="uil-angle-right"></i>}
+            {item.subMenu && activeSubMenu === item.title && (
+              <>
+                <div
+                  style={subMenuStyle}
+                  className={`absolute right-[-150px] -top-2 drop-shadow-md text-[15px] font-extralight rounded-md transition-all duration-75 flex items-center justify-center gap-2 flex-col`}
+                >
+                  <ul className="relative w-full">
+                    {item.subMenu.map((subItem) => (
+                      <div
+                        className="flex cursor-pointer hover:bg-[#ffffff1c] p-2 rounded-md transition-all justify-between items-center"
+                        onClick={() => handleMenuClick(subItem.action)}
+                      >
+                        <li className="flex items-center justify-start gap-1">
+                          <i className={`uil ${subItem.icon}`}></i>
+                          <span>{subItem.title}</span>
+                        </li>
+                      </div>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            )}
+          </div>
+        ))}
       </ul>
-      <span className="material-symbols-outlined">arrow_forward_ios</span>
     </div>
   );
 
