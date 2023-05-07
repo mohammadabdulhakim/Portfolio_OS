@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { desktopPrograms, osBgSrcs } from "../../../constants/index.mjs";
+import { desktopPrograms } from "../../../constants/index.mjs";
 import { useOsStore } from "../../../libs/osStates";
 import Navbar from "./Navbar";
 import Program from "./programs/Program";
@@ -49,7 +49,7 @@ const OsContainer: React.FC = () => {
 
   return (
     <div
-      className="h-screen w-screen relative"
+      className="h-screen w-screen relative select-none"
       id="os-container"
       style={{
         backgroundImage: `url(${bgSrc})`,

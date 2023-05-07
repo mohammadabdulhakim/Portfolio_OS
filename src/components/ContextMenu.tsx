@@ -59,18 +59,18 @@ function ContextMenu({
     position: "fixed",
     left: mousePosition.x,
     top: mousePosition.y,
-    backgroundColor: "rgba(100,100,100,0.3)",
+    backgroundColor: "rgba(120,120,120,0.3)",
     padding: "10px",
     color: "white",
-    backdropFilter: "blur(10px)",
+    backdropFilter: "blur(12px)",
     width: "230px",
   };
 
   const subMenuStyle: CSSProperties = {
-    backgroundColor: "rgba(100,100,100,0.3)",
+    backgroundColor: "rgba(120,120,120,0.3)",
     padding: "10px",
     color: "white",
-    backdropFilter: "blur(10px)",
+    backdropFilter: "blur(12px)",
     width: "150px",
   };
 
