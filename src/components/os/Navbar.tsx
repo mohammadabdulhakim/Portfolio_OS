@@ -68,7 +68,7 @@ const Navbar = ({setWaitStartup,openProgram}) => {
                   p.minimized && "bg-[#ffffff78] border-b-2 border-black"
                 }`}
               >
-                <img src={`/assets/os/icons/${p.name}.png`} />
+                <img src={p.soon? p.icon:`/assets/os/icons/${p.name}.png`} />
               </button>
             ))}
             <hr className="border-none bg-[#323232] h-[80%] w-[1px]" />

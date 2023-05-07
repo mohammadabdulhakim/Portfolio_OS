@@ -9,7 +9,7 @@ import {BsDash} from "react-icons/bs"
 
 import { useOsStore } from "../../../../libs/osStates";
 
-const Program = ({ ProgramContent, programName, index,minimized }) => {
+const Program = ({ ProgramContent, programName, index,minimized, soon,programIcon}) => {
   let initPosition = { x: Math.floor(Math.random()*300), y: Math.floor(Math.random()*250) }
   
   const [size, setSize] = useState({width:window.innerWidth/2,height:window.innerHeight/2});
@@ -90,7 +90,7 @@ const Program = ({ ProgramContent, programName, index,minimized }) => {
         <div className="app-title p-0.5 flex flex-row items-center justify-between px-2 shadow-md">
           <div className="flex flex-row items-center justify-center gap-1">
             <img
-              src={`/assets/os/icons/${programName}.png`}
+              src={soon? programIcon:`/assets/os/icons/${programName}.png`}
               alt={programName}
               className="h-5"
             />
