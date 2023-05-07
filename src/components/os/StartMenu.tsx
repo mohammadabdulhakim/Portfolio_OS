@@ -7,6 +7,7 @@ import { FormEvent, useState } from "react";
 import { useOsStore } from "../../../libs/osStates";
 import Link from "next/link";
 import Edge from "./programs/Edge";
+import { startMenuPrograms } from "../../../constants/index.mjs";
 
 const StartMenu = ({setWaitStartup}:{setWaitStartup:()=>void}) => {
   const [powerSettings, setPowerSettings] = useState(false)
@@ -44,7 +45,22 @@ const StartMenu = ({setWaitStartup}:{setWaitStartup:()=>void}) => {
             </button>
           </form>
         </div>
-        <div id="center"></div>
+        <div id="center" className="grid grid-cols-7 p-4">
+          {startMenuPrograms.map(p=>(
+            <button
+            className={``}
+            key={p.name}
+            id="desktop-btn"
+          >
+            <img
+              src={`${p.icon}`}
+              className="w-8"
+              alt={`${p.name} icon`}
+            />
+            <span>{p.name}</span>
+          </button>
+          ))}
+        </div>
         <div
           id="bottom"
           className="bg-gradient-to-l from-sky-300 to-sky-500/50 w-full h-[50px] flex items-center justify-between p-6"

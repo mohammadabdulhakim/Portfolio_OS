@@ -124,8 +124,26 @@ const contextMenuItems = ({setIconSize,openProgram}) => [
   }
 ];
 
+const startMenuPrograms = [
+  { name: "Chrome", icon: "https://www.google.com/chrome/static/images/favicons/favicon-32x32.png", usage: 100 },
+  { name: "Word", icon: "https://icons.iconarchive.com/icons/carlosjj/microsoft-office-2013/256/Word-icon.png", usage: 90 },
+  { name: "Excel", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg/826px-Microsoft_Office_Excel_%282019%E2%80%93present%29.svg.png", usage: 85 },
+  { name: "PowerPoint", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg/512px-Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg.png?20210821050414", usage: 80 },
+  { name: "VScode", icon: "https://code.visualstudio.com/favicon.ico", usage: 75 },
+  { name: "Photoshop", icon: "https://www.adobe.com/content/dam/cc/icons/photoshop-mobile.svg", usage: 70 },
+  { name: "Zoom", icon: "https://icons.iconarchive.com/icons/papirus-team/papirus-apps/512/Zoom-icon.png", usage: 65 },
+  { name: "Teams", icon: "https://cdn-icons-png.flaticon.com/512/906/906349.png", usage: 60 },
+  { name: "Slack", icon: "https://a.slack-edge.com/80588/marketing/img/meta/favicon-32.png", usage: 55 },
+  { name: "Discord", icon: "https://static-00.iconduck.com/assets.00/discord-icon-256x256-sp1mmakp.png", usage: 50 },
+  { name: "Illustrator", icon: "https://www.iconarchive.com/download/i98176/dakirby309/simply-styled/Adobe-Illustrator.ico", usage: 45 },
+  { name: "FileZilla", icon: "https://cdn2.iconfinder.com/data/icons/pack2-baco-flurry-icons-style/512/Filezilla2.png", usage: 40 },
+  { name: "Notepad++", icon: "https://notepad-plus-plus.org/favicon.ico", usage: 35 },
+  { name: "WinRAR", icon: "https://www.win-rar.com/favicon.ico", usage: 30 },
+  { name: "VLC", icon: "https://www.videolan.org/favicon.ico", usage: 25 }
+];
 
-export { mainColor, osBgSrcs, navLinks, desktopPrograms,contextMenuItems, socialLinks };
+
+export { mainColor, osBgSrcs, navLinks, desktopPrograms,contextMenuItems, socialLinks,startMenuPrograms };
 
 // import {
 //     mobile,
