@@ -1,15 +1,16 @@
 import { useSpring, animated } from "@react-spring/web";
-import { MdPowerSettingsNew } from "react-icons/md";
+import { MdPowerSettingsNew, MdSearch } from "react-icons/md";
 import { RiRestartLine } from "react-icons/ri";
 import { FaUserCircle } from "react-icons/fa";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 import { useOsStore } from "../../../libs/osStates";
 import Link from "next/link";
+import Edge from "./programs/Edge";
 
-const StartMenu = ({setWaitStartup}) => {
+const StartMenu = ({setWaitStartup}:{setWaitStartup:()=>void}) => {
   const [powerSettings, setPowerSettings] = useState(false)
-  const { setIsClicked } = useOsStore();
+  const { setIsClicked,setOpenedPrograms,openedPrograms } = useOsStore();
   const [props] = useSpring(
     () => ({
       from: { opacity: 0, y: "100%", x: "50%" },
@@ -18,6 +19,18 @@ const StartMenu = ({setWaitStartup}) => {
     []
   );
 
+  const handleSubmit = (e:FormEvent) =>{
+    e.preventDefault();
+    
+    const edge = {
+      content:Edge,
+      name:"Edge",
+      minimized:false
+    }
+    
+    setOpenedPrograms([...openedPrograms,edge])
+    setIsClicked("")
+  }
 
   return (
     <>
@@ -29,13 +42,20 @@ const StartMenu = ({setWaitStartup}) => {
         style={props}
         className={`fixed bottom-[50px] right-[50%] max-h-[90vh] h-[540px] w-[600px] max-w-[90vw] rounded-t-xl bg-mainColor/25 backdrop-blur-md drop-shadow-lg z-[99999] text-center flex justify-between items-center flex-col`}
       >
-        <div id="top"></div>
+        <div id="top" className="relative w-full h-[50px] flex items-center justify-between mt-6 px-6">
+          <form onSubmit={handleSubmit} className="relative bg-gradient-to-l from-sky-300 to-sky-500/50 w-full h-full rounded-md overflow-hidden p-2">
+            <input type="text" placeholder="Search" className="h-full w-full outline-none p-1 bg-primary/60" />
+            <button type="submit" className="absolute top-[50%] right-3 -translate-y-[50%] ">
+              <MdSearch />
+            </button>
+          </form>
+        </div>
         <div id="center"></div>
         <div
           id="bottom"
           className="bg-gradient-to-l from-sky-300 to-sky-500/50 w-full h-[50px] flex items-center justify-between p-6"
         >
-          <div className="flex items-center justify-center gap-2 hover:bg-white/10 rounded-sm p-2 transition-all "><FaUserCircle className="text-[25px]" /><span>Profile</span></div>
+          <div className="flex items-center justify-center gap-2 hover:bg-white/10 rounded-sm p-2 transition-all "><FaUserCircle className="text-[25px]" /><span>Sign in</span></div>
           <div id="power" className="relative" onMouseEnter={()=>setPowerSettings(true)} onMouseLeave={()=>setPowerSettings(false)}>
             <div className={`${powerSettings? "h-fit p-2 ":"h-0"} transition-all w-[130px] bg-white drop-shadow-md rounded-md absolute bottom-[36px] right-[50%] translate-x-[50%] text-slate-900 flex items-start justify-center flex-col gap-1`}>
               {

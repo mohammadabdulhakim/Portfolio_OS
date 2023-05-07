@@ -4,3 +4,5 @@ const Chrome = () => {
     )
   }
   export default Chrome
+
+  // https://www.google.com/search?igu=1&q=SearchHere
