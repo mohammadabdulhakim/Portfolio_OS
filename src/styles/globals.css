@@ -26,6 +26,13 @@
   scroll-behavior: smooth;
 }
 
+button{
+  opacity: 0.85;
+}
+button:hover{
+  opacity: 1;
+}
+
 #btn1 {
   padding: 8px;
   border-radius: 15px;
