@@ -15,7 +15,7 @@ const os = () => {
     if (waitStartup) {
       setTimeout(() => {
         setWaitStartup(false);
-      }, 800);
+      }, 8000);
     }
   }, [waitStartup]);
 
@@ -57,7 +57,7 @@ const os = () => {
                 <MainParticles />
               </div>
             ) : (
-              <OsContainer />
+              <OsContainer setWaitStartup={setWaitStartup} />
             )}
           </>
         )}

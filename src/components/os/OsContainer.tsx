@@ -7,7 +7,7 @@ import Program from "./programs/Program";
 import allPrograms from "./programs";
 import ContextMenu from "../ContextMenu";
 
-const OsContainer: React.FC = () => {
+const OsContainer: React.FC = ({setWaitStartup}) => {
   const {
     bgSrc,
     openedPrograms,
@@ -94,7 +94,7 @@ const OsContainer: React.FC = () => {
           />
         ))}
       </div>
-      <Navbar />
+      <Navbar setWaitStartup={setWaitStartup} />
     </div>
   );
 };

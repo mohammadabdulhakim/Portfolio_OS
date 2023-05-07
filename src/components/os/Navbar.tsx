@@ -4,7 +4,7 @@ import { useOsStore } from "../../../libs/osStates";
 import { useEffect, useState } from "react";
 import StartMenu from "./StartMenu";
 
-const Navbar = () => {
+const Navbar = ({setWaitStartup}) => {
   const { openedPrograms, setOpenedPrograms,setIsClicked,isClicked } = useOsStore();
 
   const [momentLTS, setMomentLTS] = useState("");
@@ -46,7 +46,7 @@ const Navbar = () => {
 
   return (
     <>
-      {isClicked === "startMenu" && <StartMenu /> }
+      {isClicked === "startMenu" && <StartMenu setWaitStartup={setWaitStartup} /> }
     <div className="z-[99999] fixed bottom-0 left-0 right-0 h-[50px] bg-mainColor/25 backdrop-blur-md flex items-center justify-between md:px-2 px-1 overflow-hidden">
       <div id="navbar-left"></div>
       <div

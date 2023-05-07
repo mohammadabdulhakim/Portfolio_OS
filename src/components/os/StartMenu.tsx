@@ -1,11 +1,13 @@
 import { useSpring, animated } from "@react-spring/web";
 import { MdPowerSettingsNew } from "react-icons/md";
 import { RiRestartLine } from "react-icons/ri";
+import { FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
 
 import { useOsStore } from "../../../libs/osStates";
+import Link from "next/link";
 
-const StartMenu = () => {
+const StartMenu = ({setWaitStartup}) => {
   const [powerSettings, setPowerSettings] = useState(false)
   const { setIsClicked } = useOsStore();
   const [props] = useSpring(
@@ -16,16 +18,6 @@ const StartMenu = () => {
     []
   );
 
-  const powerBtnS = [
-    {
-      title:"Restart",
-      icon:RiRestartLine
-    },
-    {
-      title:"Power Off",
-      icon:MdPowerSettingsNew
-    },
-  ]
 
   return (
     <>
@@ -43,16 +35,21 @@ const StartMenu = () => {
           id="bottom"
           className="bg-gradient-to-l from-sky-300 to-sky-500/50 w-full h-[50px] flex items-center justify-between p-6"
         >
-          <div></div>
+          <div className="flex items-center justify-center gap-2 hover:bg-white/10 rounded-sm p-2 transition-all "><FaUserCircle className="text-[25px]" /><span>Profile</span></div>
           <div id="power" className="relative" onMouseEnter={()=>setPowerSettings(true)} onMouseLeave={()=>setPowerSettings(false)}>
             <div className={`${powerSettings? "h-fit p-2 ":"h-0"} transition-all w-[130px] bg-white drop-shadow-md rounded-md absolute bottom-[36px] right-[50%] translate-x-[50%] text-slate-900 flex items-start justify-center flex-col gap-1`}>
               {
-                powerSettings && powerBtnS.map((btn)=>(
-                  <button key={btn.title} className="flex items-center gap-2 hover:bg-gray-400/20 w-full p-2 transition-all duration-75">
-                    <btn.icon className="text-[18px]" />
-                    <span className="text-[14px]">{btn.title}</span>
+                powerSettings && 
+                <>
+                  <button className="flex items-center gap-2 hover:bg-gray-400/20 w-full p-2 transition-all duration-75" onClick={()=>setWaitStartup(true)}>
+                    <RiRestartLine className="text-[18px]" />
+                    <span className="text-[14px]">Restart</span>
                   </button>
-                ))
+                  <Link href={"/"} className="flex items-center gap-2 hover:bg-gray-400/20 w-full p-2 transition-all duration-75">
+                    <MdPowerSettingsNew className="text-[18px]" />
+                    <span className="text-[14px]">Power Off</span>
+                  </Link>
+                </>
               }
             </div>
             <button className="bg-white p-2 text-[20px] text-black rounded-md">
