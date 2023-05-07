@@ -94,7 +94,7 @@ const OsContainer: React.FC = ({setWaitStartup}) => {
           />
         ))}
       </div>
-      <Navbar setWaitStartup={setWaitStartup} />
+      <Navbar setWaitStartup={setWaitStartup} openProgram={openProgram} />
     </div>
   );
 };

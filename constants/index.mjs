@@ -125,7 +125,6 @@ const contextMenuItems = ({setIconSize,openProgram}) => [
 ];
 
 const startMenuPrograms = [
-  { name: "Chrome", icon: "https://www.google.com/chrome/static/images/favicons/favicon-32x32.png", usage: 100 },
   { name: "Word", icon: "https://icons.iconarchive.com/icons/carlosjj/microsoft-office-2013/256/Word-icon.png", usage: 90 },
   { name: "Excel", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg/826px-Microsoft_Office_Excel_%282019%E2%80%93present%29.svg.png", usage: 85 },
   { name: "PowerPoint", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg/512px-Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg.png?20210821050414", usage: 80 },
