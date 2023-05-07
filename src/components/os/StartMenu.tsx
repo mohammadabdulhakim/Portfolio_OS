@@ -21,15 +21,9 @@ const StartMenu = ({setWaitStartup}:{setWaitStartup:()=>void}) => {
 
   const handleSubmit = (e:FormEvent) =>{
     e.preventDefault();
-    
-    const edge = {
-      content:Edge,
-      name:"Edge",
-      minimized:false
-    }
-    
-    setOpenedPrograms([...openedPrograms,edge])
+
     setIsClicked("")
+    window.open("https://www.google.com/search?safe=active&q="+e.target["0"].value);
   }
 
   return (
@@ -44,8 +38,8 @@ const StartMenu = ({setWaitStartup}:{setWaitStartup:()=>void}) => {
       >
         <div id="top" className="relative w-full h-[50px] flex items-center justify-between mt-6 px-6">
           <form onSubmit={handleSubmit} className="relative bg-gradient-to-l from-sky-300 to-sky-500/50 w-full h-full rounded-md overflow-hidden p-2">
-            <input type="text" placeholder="Search" className="h-full w-full outline-none p-1 bg-primary/60" />
-            <button type="submit" className="absolute top-[50%] right-3 -translate-y-[50%] ">
+            <input required type="text" placeholder="Search" className="h-full w-full outline-none p-1 bg-primary/60" />
+            <button type="submit" className="absolute top-[50%] right-3 -translate-y-[50%] bg-white text-black p-1 text-[18px] rounded-full">
               <MdSearch />
             </button>
           </form>
@@ -83,3 +77,6 @@ const StartMenu = ({setWaitStartup}:{setWaitStartup:()=>void}) => {
 };
 
 export default StartMenu;
+
+
+
