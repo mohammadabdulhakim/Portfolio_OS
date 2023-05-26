@@ -2,7 +2,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
 
-const Computers = ({isPhone,lightsOn}) => {
+const Computers = ({isPhone,lightsOn}:Record<string,boolean|null>) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
 
   return (
@@ -30,9 +30,9 @@ const Computers = ({isPhone,lightsOn}) => {
   );
 };
 
-const ComputersCanvas = ({isPhone,lightsOn}) => {
+const ComputersCanvas = ({isPhone,lightsOn}:Record<string,boolean|null>) => {
 
-  const deg2rad = degrees => degrees * (Math.PI / 180);
+  // const deg2rad = (degrees:number) => degrees * (Math.PI / 180);
 
 
   return (

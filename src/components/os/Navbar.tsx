@@ -4,18 +4,21 @@ import { useOsStore } from "../../../libs/osStates";
 import { useEffect, useState } from "react";
 import StartMenu from "./StartMenu";
 
-const Navbar = ({setWaitStartup,openProgram}) => {
+const Navbar = ({setWaitStartup,openProgram}:any) => {
   const { openedPrograms, setOpenedPrograms,setIsClicked,isClicked } = useOsStore();
 
   const [momentLTS, setMomentLTS] = useState("");
 
   const minimize = (index: number) => {
-    interface NOPInterface {
+    interface newProgramInterface {
+      soon: boolean;
+      icon: string | null;
+      content?: JSX.Element;
       minimized: boolean;
       name: string;
     }
     
-    let newOpenedPrograms:NOPInterface[] = openedPrograms.map((p, i) => {
+    let newOpenedPrograms:newProgramInterface[] = openedPrograms.map((p, i) => {
       if (i == index) {
         switch (p.minimized) {
           case true:
@@ -68,7 +71,7 @@ const Navbar = ({setWaitStartup,openProgram}) => {
                   p.minimized && "bg-[#ffffff78] border-b-2 border-black"
                 }`}
               >
-                <img src={p.soon? p.icon:`/assets/os/icons/${p.name}.png`} />
+                <img src={p.soon? (p.icon || ""):`/assets/os/icons/${p.name}.png`} />
               </button>
             ))}
             <hr className="border-none bg-[#323232] h-[80%] w-[1px]" />

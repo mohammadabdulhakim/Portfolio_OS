@@ -214,3 +214,14 @@ button:hover{
     }
   }
 /*! ==================> [END OF START UP ANIMATIONS] <============================ */
+
+
+.text_head{
+  @apply text-6xl font-bold
+}
+.blue_gradient{
+  @apply bg-gradient-to-r from-blue-700 via-sky-600 to-blue-500 bg-clip-text text-transparent
+}
+.orange_gradient{
+  @apply bg-gradient-to-br from-orange-500 via-yellow-400 to-orange-600 bg-clip-text text-transparent
+}

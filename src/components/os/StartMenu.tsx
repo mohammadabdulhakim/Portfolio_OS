@@ -8,9 +8,9 @@ import { useOsStore } from "../../../libs/osStates";
 import Link from "next/link";
 import { desktopPrograms, startMenuPrograms } from "../../../constants/index.mjs";
 
-const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:()=>void,openProgram:(pName:string,soon?:boolean,icon?:string)=>void}) => {
+const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:(newValue:boolean)=>void,openProgram:(pName:string,soon?:boolean,icon?:string)=>void}) => {
   const [powerSettings, setPowerSettings] = useState(false)
-  const { setIsClicked } = useOsStore();
+  const { setIsClicked,setOpenedPrograms } = useOsStore();
   const [props] = useSpring(
     () => ({
       from: { opacity: 0, y: "100%", x: "50%" },
@@ -19,11 +19,13 @@ const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:()=>void,openPro
     []
   );
 
-  const handleSubmit = (e:FormEvent) =>{
+  const handleSubmit = (e: any /* FormEvent<HTMLFormElement> */) =>{
     e.preventDefault();
 
     setIsClicked("")
-    window.open("https://www.google.com/search?safe=active&q="+e.target["0"].value);
+    
+    if(!e.target) return;
+    window.open("https://www.google.com/search?safe=active&q=" + (e.target["0"] as HTMLInputElement).value);
   }
 
 
@@ -88,7 +90,7 @@ const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:()=>void,openPro
               {
                 powerSettings && 
                 <>
-                  <button className="flex items-center gap-2 hover:bg-gray-400/20 w-full p-2 transition-all duration-75" onClick={()=>setWaitStartup(true)}>
+                  <button className="flex items-center gap-2 hover:bg-gray-400/20 w-full p-2 transition-all duration-75" onClick={()=>{setWaitStartup(true);setOpenedPrograms([])}}>
                     <RiRestartLine className="text-[18px]" />
                     <span className="text-[14px]">Restart</span>
                   </button>

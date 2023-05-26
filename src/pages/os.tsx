@@ -5,7 +5,7 @@ import MainParticles from "@/components/particles/MainParticles";
 import { OsContainer, Startup } from "@/components/os";
 import Head from "next/head";
 
-const os = () => {
+const Os = () => {
   const [waitStartup, setWaitStartup] = useState(false);
   const [askedForScreen, setAskedForScreen] = useState(false);
 
@@ -66,4 +66,4 @@ const os = () => {
   );
 };
 
-export default os;
+export default Os;

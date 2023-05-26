@@ -9,22 +9,22 @@ import {BsDash} from "react-icons/bs"
 
 import { useOsStore } from "../../../../libs/osStates";
 
-const Program = ({ ProgramContent, programName, index,minimized, soon,programIcon}) => {
+const Program = ({ ProgramContent, programName, index,minimized, soon,programIcon}:any) => {
   let initPosition = { x: Math.floor(Math.random()*300), y: Math.floor(Math.random()*250) }
   
-  const [size, setSize] = useState({width:window.innerWidth/2,height:window.innerHeight/2});
+  const [size, setSize] = useState<{width:string | number, height:string | number}>({width:window.innerWidth/2,height:window.innerHeight/2});
   const [position, setPosition] = useState(initPosition);
   const [zIndex, setZIndex] = useState(index);
 
   const {programActiveIndex, setProgramActiveIndex,openedPrograms,setOpenedPrograms} = useOsStore()
 
   
-  const handleResize = (event, direction, ref, delta, position) => {
+  const handleResize = (event:any, direction:any, ref:any) => {
     // Update state with new dimensions
     setSize({ width: ref.offsetWidth, height: ref.offsetHeight });
   };
 
-  const handleDrag = (event, data) => {
+  const handleDrag = (event:any, data:any) => {
     // Update state with new position
     setPosition({ x: data.x, y: data.y });
   };
@@ -41,7 +41,16 @@ const Program = ({ ProgramContent, programName, index,minimized, soon,programIco
       }
     }
     const closeProgram = () =>{
-      let newOpenedPrograms = openedPrograms.filter((p,i)=>{
+      interface newProgramInterface {
+        soon: boolean;
+        icon: string | null;
+        content?: JSX.Element;
+        minimized: boolean;
+        name: string;
+      }
+
+
+      let newOpenedPrograms:newProgramInterface[] = openedPrograms.filter((p,i)=>{
         return i !== index
       })
       setOpenedPrograms(newOpenedPrograms)
@@ -97,7 +106,7 @@ const Program = ({ ProgramContent, programName, index,minimized, soon,programIco
             <span>{programName}</span>
           </div>
           <div className="text-white flex flex-row gap-2">
-            <BiSquareRounded onClick={maximize} className="bg-green-600 text-green-600 hover:text-white rounded-full opacity-80 transition-all hover:opacity-100 cursor-pointer p-0.5" />
+            <BiSquareRounded onClick={maximize} className="drop-shadow-lg bg-green-600 text-green-600 hover:text-white rounded-full opacity-80 transition-all hover:opacity-100 cursor-pointer p-0.5" />
             <BsDash onClick={minimize} className="bg-yellow-600 text-yellow-600 hover:text-white rounded-full opacity-80 transition-all hover:opacity-100 cursor-pointer" />
             <MdClose onClick={closeProgram} className="bg-red-600 text-red-600 hover:text-white rounded-full opacity-80 transition-all hover:opacity-100 cursor-pointer" />
           </div>

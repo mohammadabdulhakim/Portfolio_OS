@@ -5,10 +5,12 @@ import Edge from "./Edge";
 import Appearance from "./Appearance"
 
 
-export default {
+const allPrograms:any = {
     Program,
     VScode,
     Chrome,
     Edge,
     Appearance,
 }
+
+export default allPrograms

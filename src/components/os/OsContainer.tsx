@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 import { desktopPrograms } from "../../../constants/index.mjs";
 import { useOsStore } from "../../../libs/osStates";
@@ -7,7 +7,7 @@ import Program from "./programs/Program";
 import allPrograms from "./programs";
 import ContextMenu from "../ContextMenu";
 
-const OsContainer: React.FC = ({setWaitStartup}) => {
+const OsContainer = ({ setWaitStartup }: { setWaitStartup: Dispatch<SetStateAction<boolean>> }) => {
   const {
     bgSrc,
     openedPrograms,
@@ -30,15 +30,23 @@ const OsContainer: React.FC = ({setWaitStartup}) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const openProgram = (pName: string,soon: boolean = false,icon?: string) => {
-    let newProgram = {
+  const openProgram = (pName: string, soon: boolean = false, icon?: string) => {
+    interface newProgramInterface {
+      soon: boolean;
+      icon: string | null;
+      content?: JSX.Element;
+      minimized: boolean;
+      name: string;
+    }
+
+    let newProgram: newProgramInterface = {
       name: pName,
       minimized: false,
       soon,
       icon: icon || null,
     }
 
-    newProgram.content = soon? ()=>(<h1 className="text-center absolute top-[50%] right-[50%] translate-x-[50%] -translate-y-[50%] text-[30px] font-bold">Soon</h1>) : allPrograms[pName]
+    newProgram.content = soon ? () => (<h1 className="text-center absolute top-[50%] right-[50%] translate-x-[50%] -translate-y-[50%] text-[30px] font-bold">Soon</h1>) : allPrograms[pName]
 
     setOpenedPrograms([...openedPrograms, newProgram]);
   };
@@ -74,8 +82,8 @@ const OsContainer: React.FC = ({setWaitStartup}) => {
               style={
                 isClicked === p.name
                   ? {
-                      backgroundColor: "#c1c1c161",
-                    }
+                    backgroundColor: "#c1c1c161",
+                  }
                   : {}
               }
             >
