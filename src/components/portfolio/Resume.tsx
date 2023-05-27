@@ -1,8 +1,9 @@
-import React from 'react'
+import cv from "./resume.json"
 
 const Resume = () => {
+  console.log(cv.resume)
   return (
-    <div>Resume</div>
+    <div dangerouslySetInnerHTML={{__html:`${cv.resume}`}}></div>
   )
 }
 

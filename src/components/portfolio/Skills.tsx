@@ -70,14 +70,14 @@ const Skills = () => {
 
 
   return (
-    <Parallax pages={skills.length +3} id='skills-parallax' className='h-full bg-gradient-conic from-blue-500 via-cyan-500 to-blue-500 text-white' onClick={()=>router.push("#skills")}>
+    <Parallax pages={skills.length +3} id='skills-parallax' className='h-full -ml-2.5 bg-gradient-conic from-blue-500 via-cyan-500 to-blue-500 text-white' onClick={()=>router.push("#skills")}>
         <ParallaxLayer offset={0} speed={0.5} className='flex items-center justify-center'>
           <p className='text_head'>Click then Scroll down</p>   
         </ParallaxLayer>
 
         <ParallaxLayer sticky={{ start: 1, end: skills.length +1 }} className='flex items-center justify-start mx-8 md:mx-20' >
-          <div className='flex items-center justify-center gap-3 bg-gradient-to-r from-slate-900 to-slate-800 p-5 rounded-md' >
-            <img src="https://cdn-icons-png.flaticon.com/512/9375/9375367.png" width={80} height={80} alt="skills" />
+          <div className='flex items-center justify-center gap-3 bg-gradient-to-r from-slate-900 to-slate-800 p-5 px-12 rounded-md' >
+            {/* <img src="https://cdn-icons-png.flaticon.com/512/9375/9375367.png" width={80} height={80} alt="skills" /> */}
             <p className='text-6xl'>Skills</p>
           </div>
         </ParallaxLayer>
