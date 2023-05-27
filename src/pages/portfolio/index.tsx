@@ -118,7 +118,7 @@ const PortfolioPage = () => {
           <Articles />
         </div>
 
-        <div id={`resume`} className="w-screen h-screen">
+        <div id={`resume`} className="w-screen xl:block hidden">
           <Resume />
         </div>
 
