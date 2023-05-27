@@ -13,6 +13,10 @@ import Contact from "@/components/portfolio/Contact";
 
 const portfolioNavLinks = [
   {
+    title: "Home",
+    link: "#"
+  },
+  {
     title: "Skills",
     link: "#skills"
   },
