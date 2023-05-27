@@ -64,7 +64,7 @@ const PortfolioPage = () => {
     to: { opacity: 1, height: "52px" },
   });
 
-  return (
+  return ( 
     <div className="bg-gray-100 text-slate-900 overflow-x-hidden">
       <Head>
         <title>Mohammad | Portfolio</title>
