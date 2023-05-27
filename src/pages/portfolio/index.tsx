@@ -10,6 +10,8 @@ import Articles from "@/components/portfolio/Articles";
 import Resume from "@/components/portfolio/Resume";
 import Contact from "@/components/portfolio/Contact";
 
+import { Parallax } from "@react-spring/parallax";
+
 
 const portfolioNavLinks = [
   {
@@ -68,7 +70,8 @@ const PortfolioPage = () => {
     to: { opacity: 1, height: "52px" },
   });
 
-  return ( 
+  return (
+    <>
     <div className="bg-gray-100 text-slate-900 overflow-x-hidden">
       <Head>
         <title>Mohammad | Portfolio</title>
@@ -124,6 +127,7 @@ const PortfolioPage = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
