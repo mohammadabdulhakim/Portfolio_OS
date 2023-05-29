@@ -86,7 +86,7 @@ const PortfolioPage = () => {
           </animated.h1>
           <animated.div style={navProps} className={`p-3 bg-white drop-shadow-md gap-5 flex items-center justify-center px-8`}>
             {portfolioNavLinks.map((nLink) => (
-              <Link key={nLink.link} href={`${nLink.link}`} download={nLink.download || null} target="_blank" className="text-blue-900 opacity-80 hover:opacity-100 transition-all font-medium">
+              <Link key={nLink.link} href={`${nLink.link}`} download={nLink.download || null} target={!nLink.link.includes("#") ? "_blank":"_self"} className="text-blue-900 opacity-80 hover:opacity-100 transition-all font-medium">
                 {nLink.title}
               </Link>
             ))}

@@ -70,7 +70,7 @@ const Skills = () => {
 
 
   return (
-    <Parallax pages={skills.length +3} id='skills-parallax' className='h-full bg-gradient-conic from-blue-500 via-cyan-500 to-blue-500 text-white' onClick={()=>router.push("#skills")}>
+    <Parallax pages={skills.length +4} id='skills-parallax' className='h-full bg-gradient-conic from-blue-500 via-cyan-500 to-blue-500 text-white' onClick={()=>router.push("#skills")}>
         <ParallaxLayer offset={0} speed={0.5} className='flex items-center justify-center'>
           <p className='text_head'>Click then Scroll down</p>   
         </ParallaxLayer>
@@ -90,6 +90,9 @@ const Skills = () => {
           </div>
         </ParallaxLayer>
     ))}
+<ParallaxLayer offset={skills.length + 3} speed={0.5} className='flex items-center justify-center'>
+<p className='text_head'>Click to exit</p>   
+</ParallaxLayer>
 
     </Parallax>
   )

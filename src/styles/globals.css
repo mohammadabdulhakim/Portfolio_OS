@@ -98,9 +98,6 @@ button:hover{
 #desktop-btn:hover {
   background-color: #c1c1c142;
 }
-img{
-  filter: ;
-}
 
 /** ================> [ start up animations ] <============================*/
 
@@ -236,3 +233,20 @@ img{
 .orange_gradient{
   @apply bg-gradient-to-br from-orange-500 via-yellow-400 to-orange-600 bg-clip-text text-transparent
 }
+.yellow_gradient{
+  @apply bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 bg-clip-text text-transparent
+}
+.red_gradient{
+  @apply bg-gradient-to-r from-red-500 via-red-400 to-red-600 bg-clip-text text-transparent
+}
+.desc {
+  @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
+}
+
+.btn{
+  @apply bg-mainColor p-2.5 rounded-md px-6 border-2 border-mainColor hover:bg-transparent transition-all text-white hover:text-mainColor
+}
+.btn_outline{
+  @apply hover:bg-mainColor p-2.5 rounded-md px-6 border-2 border-mainColor bg-transparent transition-all hover:text-white text-mainColor
+}
+
