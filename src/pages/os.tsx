@@ -27,7 +27,7 @@ const Os = () => {
   return (
     <div className="select-none">
       <Head>
-        <title>Mohammad | OS</title>
+        <title>OS | Mohammad AbdulHakim | abomisr</title>
         <link
           rel="stylesheet"
           href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"

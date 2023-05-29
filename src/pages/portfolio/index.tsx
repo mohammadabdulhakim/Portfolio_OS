@@ -74,7 +74,7 @@ const PortfolioPage = () => {
     <>
     <div className="bg-gray-100 text-slate-900 overflow-x-hidden">
       <Head>
-        <title>Mohammad | Portfolio</title>
+        <title>Portfolio | Mohammad AbdulHakim | abomisr</title>
       </Head>
       <div className="flex items-center justify-center h-screen w-screen flex-col gap-10">
         <div className="flex items-center flex-col justify-center gap-6">

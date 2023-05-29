@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <Suspense fallback={<Loader />}>
       <Head>
-        <title>Mohammad | AboMisr</title>
+        <title>Mohammad AbdulHakim | AboMisr</title>
       </Head>
       <main
         className={`flex min-h-screen flex-col items-center justify-between relative bg-primary`}
