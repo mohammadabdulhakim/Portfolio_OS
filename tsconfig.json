@@ -19,6 +19,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "constants/index.mjs", "libs/osStates.ts", "src/components/index.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "constants/index.ts", "libs/osStates.ts", "src/components/index.tsx"],
   "exclude": ["node_modules"]
 }

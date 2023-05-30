@@ -6,7 +6,7 @@ import { FormEvent, useState } from "react";
 
 import { useOsStore } from "../../../libs/osStates";
 import Link from "next/link";
-import { desktopPrograms, startMenuPrograms } from "../../../constants/index.mjs";
+import { desktopPrograms, startMenuPrograms } from "../../../constants/index.js";
 
 const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:(newValue:boolean)=>void,openProgram:(pName:string,soon?:boolean,icon?:string)=>void}) => {
   const [powerSettings, setPowerSettings] = useState(false)

@@ -6,13 +6,15 @@ import { EffectCards } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
+import { projects } from "../../../constants";
+import Link from "next/link";
 
 const Projects = ({ isPage }: { isPage?: boolean }) => {
   const router = useRouter();
 
   return (
     <div
-      className="relative h-full p-2 md:px-60 px-8 bg-gradient-radial from-sky-500 via-sky-800 to-sky-900 text-white bg-cover duration-500 transition-all overflow-x-hidden"
+      className="relative h-full p-2 md:px-10 px-8 pb-8 bg-gradient-radial from-[#1e0d48] via-[#100628] to-[#090316] text-white bg-cover duration-500 transition-all overflow-x-hidden"
       onClick={() => router.push("#projects")}
     >
       <div className="w-full h-screen flex items-center justify-center flex-col">
@@ -23,72 +25,75 @@ const Projects = ({ isPage }: { isPage?: boolean }) => {
         }
       </div>
 
-      <div className="bg-slate-200/60 p-2 drop-shadow-lg backdrop-blur-md h-fit gap-3 flex items-center justify-center flex-col rounded-xl">
-        <h1 className="text_head yellow_gradient">Co-Student</h1>
+<div className="lg:grid lg:grid-cols-2 flex flex-col gap-10 items-center justify-between w-full">
+      {projects.map((p)=>(
+      <div key={p.title} className="bg-[#1f0b4e] p-3 w-[500px] max-w-full h-fit drop-shadow-xl backdrop-blur-md gap-2 flex items-center justify-center flex-col rounded-xl">
 
         <Swiper
           effect={"cards"}
           grabCursor={true}
           modules={[EffectCards]}
-          className="mySwiper max-w-[60%] max-h-[65%]"
+          autoplay={{ delay: 1000, disableOnInteraction: false }}
+          className="mySwiper max-w-[90%]"
         >
-          <SwiperSlide>
+          {p.imgs.map((img)=>(
+          <SwiperSlide key={img.src}>
             <div className="w-full">
               <img
-                src={`/assets/projects/${"co-student/1"}.png`}
+                src={`/assets/projects/${p.title}/${img.src}`}
                 alt={`${"Co-Student" + " | Grade Feed"}`}
                 className="w-full h-full rounded-t-lg "
               />
-              <span className="text-lg text-slate-900 w-full text-center block mt-1 bg-white p-1 rounded-b-lg">
-                Grade Feed
+              <span className="text-lg text-slate-900 w-full text-center block pt-1 bg-white p-1 rounded-b-lg">
+                {img.title}
               </span>
             </div>
           </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src={`/assets/projects/${"co-student/2"}.png`}
-              alt={``}
-              className="w-full h-full rounded-lg "
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src={`/assets/projects/${"co-student/3"}.png`}
-              alt={``}
-              className="w-full h-full rounded-lg "
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src={`/assets/projects/${"co-student/4"}.png`}
-              alt={``}
-              className="w-full h-full rounded-lg "
-            />
-          </SwiperSlide>
+          ))}
         </Swiper>
 
-        <p className="desc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dicta
-          voluptas mollitia consequatur cum, repellat est inventore sit,
-          doloribus hic incidunt obcaecati dolorum, molestiae autem aliquid
-          saepe eos sint laudantium!
-        </p>
-        <div className="p-2 flex items-center justify-center gap-5">
-          <button type="button" className="btn">
-            Demo
-          </button>
-          <button type="button" className="btn_outline">
-            Github
-          </button>
+        <div className="p-4 pb-0 flex items-start w-full gap-1 flex-col">
+          
+          {p.hasDomain ? 
+          <Link href={p.demo || ""} target="_blank" className="flex items-end ">
+          <h4 className="text-2xl font-bold">{p.title.toUpperCase()}</h4>
+          <span>.com</span>
+          </Link>
+          :
+          <h4 className="text-2xl font-bold">{p.title.toUpperCase()}</h4>
+          }
+          <p className="text-lg text-gray-200 max-w-2xl">
+            {p.desc}
+          </p>
+          <div className="p-2 flex items-center justify-center gap-5 mx-auto">
+            {p.demo &&
+            <Link href={p.demo} className="opacity-95">
+              <img src="/assets/icons/demo.png" alt="demo" width={55} className="rounded-full" />
+            </Link>
+            }
+            {p.github &&
+              <Link href={p.github} className="opacity-95">
+              <img src="/assets/icons/github.png" alt="github" width={55} className="rounded-full" />
+            </Link>}
+          </div>
+
+          <div className="flex items-center gap-2">
+            {p.tags.map((tag)=>(
+              <span key={tag.name} className={tag.color} >#{tag.name}</span>
+            )
+            )}
+          </div>
         </div>
       </div>
+      ))}
+</div>
 
+        <div className="w-full h-screen text_head items-center justify-center flex">
       {
         !isPage &&
-        <div className="w-full h-screen text_head items-center justify-center flex">
           <h1>Click to exit</h1>
+        }
         </div>
-      }
     </div>
   );
 };

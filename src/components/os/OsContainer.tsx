@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
-import { desktopPrograms } from "../../../constants/index.mjs";
+import { desktopPrograms } from "../../../constants/index.js";
 import { useOsStore } from "../../../libs/osStates";
 import Navbar from "./Navbar";
 import Program from "./programs/Program";

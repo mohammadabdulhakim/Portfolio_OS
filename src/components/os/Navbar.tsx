@@ -1,5 +1,5 @@
 import moment from "moment";
-import { navLinks } from "../../../constants/index.mjs";
+import { navLinks } from "../../../constants/index.js";
 import { useOsStore } from "../../../libs/osStates";
 import { useEffect, useState } from "react";
 import StartMenu from "./StartMenu";
