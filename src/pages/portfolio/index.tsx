@@ -114,7 +114,7 @@ const PortfolioPage = () => {
           <Projects />
         </div>
 
-        <div id={`articles`} className="w-screen h-screen">
+        <div id={`articles`}>
           <Articles />
         </div>
 

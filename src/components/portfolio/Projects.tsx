@@ -55,7 +55,7 @@ const Projects = ({ isPage }: { isPage?: boolean }) => {
         <div className="p-4 pb-0 flex items-start w-full gap-1 flex-col">
           
           {p.hasDomain ? 
-          <Link href={p.demo || ""} target="_blank" className="flex items-end ">
+          <Link href={p.demo || ""} target="_blank" className="flex items-end text-white">
           <h4 className="text-2xl font-bold">{p.title.toUpperCase()}</h4>
           <span>.com</span>
           </Link>

@@ -23,4 +23,6 @@ interface Article {
     url: string,
     title: string,
     description: string,
+    reading_time_minutes: number;
+    positive_reactions_count: number;
 }
