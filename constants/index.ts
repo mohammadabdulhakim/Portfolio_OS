@@ -269,6 +269,40 @@ const projects:ProjectI[] = [
           color: "pink-text-gradient",
         },
       ],
+    },
+    {
+      title: "agere",
+      desc: "is an exceptional npm package that can assist you in numerous ways.\n   It boasts a range of awesome tools, such as randArr() which randomizes array elements,\n   and gPss() which generates strong passwords or IDs based on your preferences, among others.",
+      imgs: [
+        {
+          src: "1.png",
+          title: "Installation"
+        },
+        {
+          src: "2.png",
+          title: "Randomize array elements"
+        },
+        {
+          src: "3.png",
+          title: "Generate a password"
+        },
+        {
+          src: "4.png",
+          title: "More utils"
+        },
+      ],
+      demo: "https://www.npmjs.com/package/agere",
+      github:"https://github.com/abomisr/agere",
+      tags: [
+        {
+          name: "js",
+          color: "yellow_gradient",
+        },
+        {
+          name: "ts",
+          color: "blue-text-gradient",
+        },
+      ],
     }
 ]
 

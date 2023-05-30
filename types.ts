@@ -12,7 +12,15 @@ interface ProjectI {
     desc: string,
     imgs: img[];
     tags: tag[],
-    hasDomain: boolean;
+    hasDomain?: boolean;
     demo?: string,
     github?: string,
+}
+
+interface Article {
+    tag_list:string[],
+    cover_image: string,
+    url: string,
+    title: string,
+    description: string,
 }

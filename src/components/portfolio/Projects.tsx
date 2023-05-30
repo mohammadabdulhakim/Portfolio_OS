@@ -67,12 +67,12 @@ const Projects = ({ isPage }: { isPage?: boolean }) => {
           </p>
           <div className="p-2 flex items-center justify-center gap-5 mx-auto">
             {p.demo &&
-            <Link href={p.demo} className="opacity-95">
+            <Link href={p.demo} target="_blank" className="opacity-95">
               <img src="/assets/icons/demo.png" alt="demo" width={55} className="rounded-full" />
             </Link>
             }
             {p.github &&
-              <Link href={p.github} className="opacity-95">
+              <Link href={p.github} target="_blank" className="opacity-95">
               <img src="/assets/icons/github.png" alt="github" width={55} className="rounded-full" />
             </Link>}
           </div>
