@@ -318,7 +318,7 @@ const projects:ProjectI[] = [
     },
     {
       title: "os",
-      desc: "is an exceptional npm package that can assist you in numerous ways.\n   It boasts a range of awesome tools, such as randArr() which randomizes array elements,\n   and gPss() which generates strong passwords or IDs based on your preferences, among others.",
+      desc: "Explore my website that looks and feels just like Windows 11! Built with Next.js and TypeScript, it offers an immersive experience complete with popular applications like Google Chrome, Edge, and Visual Studio Code. With the ability to customize the background, turn the site on and off, and even restart it, this website is unlike anything you've ever seen before. Discover it now!",
       imgs: [
         {
           src: "1.png",
@@ -326,23 +326,23 @@ const projects:ProjectI[] = [
         },
         {
           src: "2.png",
-          title: "Skills"
+          title: "Startup"
         },
         {
           src: "3.png",
-          title: "Projects"
+          title: "Desktop"
         },
         {
           src: "4.png",
-          title: "Articles"
+          title: "Start menu"
         },
         {
           src: "5.png",
-          title: "Resume"
+          title: "Vscode"
         },
         {
           src: "6.png",
-          title: "Contact"
+          title: "Appearance"
         },
       ],
       demo:"/",
@@ -363,7 +363,7 @@ const projects:ProjectI[] = [
     },
     {
       title: "portfolio",
-      desc: "is an exceptional npm package that can assist you in numerous ways.\n   It boasts a range of awesome tools, such as randArr() which randomizes array elements,\n   and gPss() which generates strong passwords or IDs based on your preferences, among others.",
+      desc: "My portfolio is a collection of my work, skills, and projects. It's designed for anyone interested in learning more about my experiences and expertise. With sections dedicated to articles, skills, resume, contact, and projects, you can easily navigate and explore what I have to offer. Whether you're a potential employer, collaborator, or just curious, I invite you to take a look and see what I can bring to the table.",
       imgs: [
         {
           src: "1.png",
