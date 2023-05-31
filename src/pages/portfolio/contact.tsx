@@ -8,7 +8,7 @@ const page = () => {
     <Head>
         <title>Contact | Mohammad AbdulHakim | abomisr</title>
     </Head>
-    <Contact />
+    <Contact isPage={true} />
     </>
   )
 }

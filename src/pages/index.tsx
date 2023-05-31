@@ -56,16 +56,20 @@ export default function Home() {
               <Link
                 href={"/os"}
                 id="btn1"
-                className="h-14 w-48 text-center leading-7"
+                className="h-14 w-48"
               >
+                <span>
                 Turn on this pc
+                </span>
               </Link>
               <Link
                 id="btn1"
                 href="/portfolio"
-                className="h-14 w-48 text-center leading-7"
+                className="h-14 w-48"
               >
+                <span>
                 Portfolio
+                </span>
               </Link>
             </div>
           )}

@@ -3,7 +3,7 @@ import { FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 
-const Contact = () => {
+const Contact = ({isPage}:{isPage?:boolean}) => {
   const [form, setForm] = useState({
     name:"",
     email:"",
@@ -63,7 +63,7 @@ const Contact = () => {
   };
 
   return (
-    <div className='flex items-center justify-center flex-col gap-6 p-6 md:p-12 text-slate-100 bg-gradient-conic from-violet-950 via-violet-700 to-violet-950 h-screen w-screen' onClick={()=>router.push("#contact")}>
+    <div className='flex items-center justify-center flex-col gap-6 p-6 md:p-12 text-slate-100 bg-gradient-conic from-violet-950 via-violet-700 to-violet-950' style={isPage? {width:"100vw",height:"100vh"}:{width:"100%",height:"100%"}} onClick={()=>router.push("#contact")}>
       <h1 className="text_head">Contact</h1>
       <form onSubmit={handleSubmit} className="h-full w-[650px] max-w-full bg-slate-100/10 backdrop-blur-md rounded-lg flex items-center justify-center flex-col gap-6">
         <input required className="input" type="text" minLength={3} onChange={handleChange} value={form.name} name="name" placeholder="Your Full name" />

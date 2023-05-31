@@ -71,10 +71,10 @@ const OsContainer = ({ setWaitStartup }: { setWaitStartup: Dispatch<SetStateActi
     >
       <div className="h-[calc(100vh-77px)] w-screen fixed top-0 left-0">
         <ContextMenu divId="os-container" openProgram={openProgram} />
-        <div className="grid grid-rows-3 gap-3 p-4">
+        <div className="grid grid-cols-2 h-full w-[300px] gap-3 p-4">
           {desktopPrograms.map((p, index) => (
             <button
-              className={`w-[80px]`}
+              className={`w-[80px] h-[100px]`}
               key={p.name}
               id="desktop-btn"
               onDoubleClick={() => openProgram(p.name)}

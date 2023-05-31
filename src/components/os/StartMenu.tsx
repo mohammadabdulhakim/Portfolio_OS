@@ -38,7 +38,7 @@ const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:(newValue:boolea
       ></span>
       <animated.div
         style={props}
-        className={`fixed bottom-[50px] right-[50%] max-h-[90vh] h-[540px] w-[600px] max-w-[90vw] rounded-t-xl bg-mainColor/25 backdrop-blur-md drop-shadow-lg z-[99999] text-center flex justify-between items-center flex-col`}
+        className={`fixed bottom-[74px] right-[50%] max-h-[90vh] h-[540px] w-[600px] max-w-[90vw] rounded-t-xl bg-mainColor/25 backdrop-blur-md drop-shadow-lg z-[99999] text-center flex justify-between items-center flex-col`}
       >
         <div id="top" className="relative w-full h-[50px] flex items-center justify-between mt-6 px-6">
           <form onSubmit={handleSubmit} className="relative bg-gradient-to-l from-sky-300 to-sky-500/50 w-full h-full rounded-md overflow-hidden p-2">

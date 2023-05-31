@@ -89,7 +89,7 @@ const Skills = ({ isPage }: { isPage?: boolean }) => {
             </ParallaxLayer>
 
             {skills.map((skill, index) => (
-                <ParallaxLayer offset={index + 1.5} speed={0.5} className='flex items-center justify-end text-slate-900' >
+                <ParallaxLayer key={skill.title} offset={index + 1.5} speed={0.5} className='flex items-center justify-end text-slate-900' >
                     <div className='flex items-center justify-center gap-3 font-semibold bg-gradient-to-bl from-gray-50 via-gray-200 to-gray-50 p-4 px-8 rounded-md drop-shadow-md mr-[25vw]'>
                         <img src={skill.img} width={40} height={40} alt={skill.title} />
                         <p>{skill.title}</p>

@@ -52,6 +52,18 @@ const desktopPrograms = [
   {
     name: "Appearance",
   },
+  {
+    name: "Projects",
+  },
+  {
+    name: "Contact",
+  },
+  {
+    name: "Articles",
+  },
+  {
+    name: "Skills",
+  },
 ];
 
 const contextMenuItems = ({setIconSize,openProgram}:any) => [
@@ -300,6 +312,125 @@ const projects:ProjectI[] = [
         },
         {
           name: "ts",
+          color: "blue-text-gradient",
+        },
+      ],
+    },
+    {
+      title: "os",
+      desc: "is an exceptional npm package that can assist you in numerous ways.\n   It boasts a range of awesome tools, such as randArr() which randomizes array elements,\n   and gPss() which generates strong passwords or IDs based on your preferences, among others.",
+      imgs: [
+        {
+          src: "1.png",
+          title: "Home"
+        },
+        {
+          src: "2.png",
+          title: "Skills"
+        },
+        {
+          src: "3.png",
+          title: "Projects"
+        },
+        {
+          src: "4.png",
+          title: "Articles"
+        },
+        {
+          src: "5.png",
+          title: "Resume"
+        },
+        {
+          src: "6.png",
+          title: "Contact"
+        },
+      ],
+      demo:"/",
+      tags: [
+        {
+          name: "nextjs",
+          color: "orange-text-gradient",
+        },
+        {
+          name: "ts",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "tailwind",
+          color: "pink-text-gradient",
+        },
+      ],
+    },
+    {
+      title: "portfolio",
+      desc: "is an exceptional npm package that can assist you in numerous ways.\n   It boasts a range of awesome tools, such as randArr() which randomizes array elements,\n   and gPss() which generates strong passwords or IDs based on your preferences, among others.",
+      imgs: [
+        {
+          src: "1.png",
+          title: "Home"
+        },
+        {
+          src: "2.png",
+          title: "Skills"
+        },
+        {
+          src: "3.png",
+          title: "Projects"
+        },
+        {
+          src: "4.png",
+          title: "Articles"
+        },
+        {
+          src: "5.png",
+          title: "Resume"
+        },
+        {
+          src: "6.png",
+          title: "Contact"
+        },
+      ],
+      demo:"/portfolio",
+      tags: [
+        {
+          name: "nextjs",
+          color: "orange-text-gradient",
+        },
+        {
+          name: "ts",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "tailwind",
+          color: "pink-text-gradient",
+        },
+      ],
+    },
+    {
+      title: "much more",
+      desc: "is an exceptional npm package that can assist you in numerous ways.\n   It boasts a range of awesome tools, such as randArr() which randomizes array elements,\n   and gPss() which generates strong passwords or IDs based on your preferences, among others.",
+      imgs: [
+        {
+          src: "1.png",
+          title: "Installation"
+        },
+        {
+          src: "2.png",
+          title: "Randomize array elements"
+        },
+        {
+          src: "3.png",
+          title: "Generate a password"
+        },
+        {
+          src: "4.png",
+          title: "More utils"
+        },
+      ],
+      github:"https://github.com/abomisr?tab=repositories",
+      tags: [
+        {
+          name: "variety",
           color: "blue-text-gradient",
         },
       ],

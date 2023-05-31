@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { AiTwotoneLike } from 'react-icons/ai'
 
-const Articles = ({isPage}:{isPage:boolean}) => {
+const Articles = ({isPage}:{isPage?:boolean}) => {
   const [articles, setArticles] = useState<Article[]>([])
 
   const router = useRouter();
@@ -30,7 +30,7 @@ const Articles = ({isPage}:{isPage:boolean}) => {
       <div className='md:grid lg:grid-cols-3 md:grid-cols-2 flex flex-col items-center justify-center gap-6'>
         {
           articles.sort((a, b) => b.positive_reactions_count - a.positive_reactions_count).map((article) => (
-            <Link href={article.url} target='_blank' className='w-[400px] max-w-full h-[500px] bg-blue-900/50 backdrop-blur-md drop-shadow-lg rounded-lg overflow-hidden'>
+            <Link key={article.url} href={article.url} target='_blank' className='w-[400px] max-w-full h-[500px] bg-blue-900/50 backdrop-blur-md drop-shadow-lg rounded-lg overflow-hidden'>
               <img src={article.cover_image} alt={article.title} />
 
               <div className='p-3 flex flex-col gap-2 justify-between text-slate-200'>
@@ -52,7 +52,7 @@ const Articles = ({isPage}:{isPage:boolean}) => {
 
                   <div>
                   {article.tag_list.map((tag) => (
-                    <span className='green-text-gradient p-1'>#{tag}</span>
+                    <span key={tag} className='green-text-gradient p-1'>#{tag}</span>
                   ))}
                   </div>
                 </div>
