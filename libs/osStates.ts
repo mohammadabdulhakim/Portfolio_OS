@@ -1,5 +1,5 @@
 import { create as add } from "zustand";
-import { osBgSrcs } from "../constants/index.js";
+import { osBgSrcs } from "../constants/index";
 
 interface OpenedProgram {
   soon: boolean;

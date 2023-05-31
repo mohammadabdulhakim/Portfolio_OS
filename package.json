@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.10.0",
+    "@emailjs/browser": "^3.11.0",
     "@react-spring/parallax": "^9.7.2",
     "@react-spring/web": "^9.7.2",
     "@react-three/drei": "^9.58.5",

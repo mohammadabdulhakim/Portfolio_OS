@@ -1,4 +1,4 @@
-import { osBgSrcs } from "../../../../constants/index.js"
+import { osBgSrcs } from "../../../../constants/index"
 import { useOsStore } from "../../../../libs/osStates"
 
 const Appearance = () => {

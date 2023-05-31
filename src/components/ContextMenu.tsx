@@ -1,5 +1,5 @@
 import { CSSProperties, useEffect, useState } from "react";
-import { contextMenuItems } from "../../constants/index.js";
+import { contextMenuItems } from "../../constants/index";
 import { useOsStore } from "../../libs/osStates";
 
 function ContextMenu({
