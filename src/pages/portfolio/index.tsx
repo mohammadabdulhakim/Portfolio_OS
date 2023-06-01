@@ -83,6 +83,7 @@ const PortfolioPage = () => {
             style={startWithProps}
           >
             Start With
+            <span className="text-slate-700 text-lg font-normal"> (Recommended)</span>
           </animated.h1>
           <animated.div style={navProps} className={`p-3 bg-white drop-shadow-md gap-5 flex items-center justify-center px-8`}>
             {portfolioNavLinks.map((nLink) => (

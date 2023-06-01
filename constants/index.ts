@@ -266,7 +266,7 @@ const projects:ProjectI[] = [
           title: "Completed tasks"
         },
       ],
-      demo: "https://www.co-student.com",
+      demo: "https://pomatrix.com",
       tags: [
         {
           name: "nextjs",
@@ -408,23 +408,35 @@ const projects:ProjectI[] = [
     },
     {
       title: "much more",
-      desc: "is an exceptional npm package that can assist you in numerous ways.\n   It boasts a range of awesome tools, such as randArr() which randomizes array elements,\n   and gPss() which generates strong passwords or IDs based on your preferences, among others.",
+      desc: "You, can discover it from my repos on github, NextPrompt (Next.js), TouchShare (React, Sanity), Dashboard (React), Another Dashboard (HTML, CSS, JS), Typing speed test (HTML, CSS, JS), Coffee shop (HTML, CSS), CRUDs (HTML, CSS, JS).",
       imgs: [
         {
           src: "1.png",
-          title: "Installation"
+          title: "NextPrompt"
         },
         {
           src: "2.png",
-          title: "Randomize array elements"
+          title: "TouchShare"
         },
         {
           src: "3.png",
-          title: "Generate a password"
+          title: "Dashboard"
         },
         {
           src: "4.png",
-          title: "More utils"
+          title: "Another Dashboard"
+        },
+        {
+          src: "5.png",
+          title: "Typing speed test"
+        },
+        {
+          src: "6.png",
+          title: "Coffee Shop"
+        },
+        {
+          src: "7.png",
+          title: "CRUDs"
         },
       ],
       github:"https://github.com/abomisr?tab=repositories",
