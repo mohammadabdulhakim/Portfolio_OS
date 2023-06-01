@@ -57,7 +57,7 @@ const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:(newValue:boolea
             onClick={()=>{openProgram(p.name);setIsClicked("")}}
             id="desktop-btn"
           >
-            <Image
+            <img
               src={`/assets/os/icons/${p.name}.png`}
               className="w-8"
               alt={`${p.name} icon`}
@@ -72,7 +72,7 @@ const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:(newValue:boolea
             onClick={()=>{openProgram(p.name,true,p.icon);setIsClicked("")}}
             id="desktop-btn"
           >
-            <Image
+            <img
               src={`${p.icon}`}
               className="w-8"
               alt={`${p.name} icon`}

@@ -3,80 +3,80 @@ import { useEffect, useState } from "react";
 // import { Resizable } from "react-resizable";
 // import "react-resizable/css/styles.css";
 import { Rnd } from "react-rnd";
-import {BiSquareRounded} from "react-icons/bi"
-import {MdClose} from "react-icons/md"
-import {BsDash} from "react-icons/bs"
+import { BiSquareRounded } from "react-icons/bi"
+import { MdClose } from "react-icons/md"
+import { BsDash } from "react-icons/bs"
 
 import { useOsStore } from "../../../../libs/osStates";
 import Image from "next/image";
 
-const Program = ({ ProgramContent, programName, index,minimized, soon,programIcon}:any) => {
-  let initPosition = { x: Math.floor(Math.random()*300), y: Math.floor(Math.random()*250) }
-  
-  const [size, setSize] = useState<{width:string | number, height:string | number}>({width:window.innerWidth/2,height:window.innerHeight/2});
+const Program = ({ ProgramContent, programName, index, minimized, soon, programIcon }: any) => {
+  let initPosition = { x: Math.floor(Math.random() * 300), y: Math.floor(Math.random() * 250) }
+
+  const [size, setSize] = useState<{ width: string | number, height: string | number }>({ width: window.innerWidth / 2, height: window.innerHeight / 2 });
   const [position, setPosition] = useState(initPosition);
   const [zIndex, setZIndex] = useState(index);
 
-  const {programActiveIndex, setProgramActiveIndex,openedPrograms,setOpenedPrograms} = useOsStore()
+  const { programActiveIndex, setProgramActiveIndex, openedPrograms, setOpenedPrograms } = useOsStore()
 
-  
-  const handleResize = (event:any, direction:any, ref:any) => {
+
+  const handleResize = (event: any, direction: any, ref: any) => {
     // Update state with new dimensions
     setSize({ width: ref.offsetWidth, height: ref.offsetHeight });
   };
 
-  const handleDrag = (event:any, data:any) => {
+  const handleDrag = (event: any, data: any) => {
     // Update state with new position
     setPosition({ x: data.x, y: data.y });
   };
 
 
   // *------------------------------------------------------
-  const maximize = () =>{
-    if(typeof(size.height) == "string"){
+  const maximize = () => {
+    if (typeof (size.height) == "string") {
       setPosition(initPosition);
-      setSize({width:window.innerWidth/2,height:window.innerHeight/2});
-    }else{
-        setSize({width:"100%",height:"100%"});
-        setPosition({x:0,y:0});
-      }
+      setSize({ width: window.innerWidth / 2, height: window.innerHeight / 2 });
+    } else {
+      setSize({ width: "100%", height: "100%" });
+      setPosition({ x: 0, y: 0 });
     }
-    const closeProgram = () =>{
-      interface newProgramInterface {
-        soon: boolean;
-        icon: string | null;
-        content?: JSX.Element;
-        minimized: boolean;
-        name: string;
-      }
+  }
+  const closeProgram = () => {
+    interface newProgramInterface {
+      soon: boolean;
+      icon: string | null;
+      content?: JSX.Element;
+      minimized: boolean;
+      name: string;
+    }
 
 
-      let newOpenedPrograms:newProgramInterface[] = openedPrograms.filter((p,i)=>{
-        return i !== index
-      })
-      setOpenedPrograms(newOpenedPrograms)
-    }
-    const minimize = () =>{
-      let newOpenedPrograms = openedPrograms.map((p,i)=>{
-        if(i == index) p.minimized = true
-        return p;
-      })
-      setOpenedPrograms(newOpenedPrograms)
-    }
+    let newOpenedPrograms: newProgramInterface[] = openedPrograms.filter((p, i) => {
+      return i !== index
+    })
+    setOpenedPrograms(newOpenedPrograms)
+  }
+  const minimize = () => {
+    let newOpenedPrograms = openedPrograms.map((p, i) => {
+      if (i == index) p.minimized = true
+      return p;
+    })
+    setOpenedPrograms(newOpenedPrograms)
+  }
   // !-----------------------------------------------------
 
 
-    useEffect(()=>{
-      if(programActiveIndex == index){
-        setZIndex(100)
-      }else{
-        setZIndex(10)
-      }
-    },[programActiveIndex])
+  useEffect(() => {
+    if (programActiveIndex == index) {
+      setZIndex(100)
+    } else {
+      setZIndex(10)
+    }
+  }, [programActiveIndex])
 
-    useEffect(()=>{
-      setProgramActiveIndex(index)
-    },[])
+  useEffect(() => {
+    setProgramActiveIndex(index)
+  }, [])
 
   return (
     <Rnd
@@ -94,13 +94,13 @@ const Program = ({ ProgramContent, programName, index,minimized, soon,programIco
         left: { height: "calc(100% + 22px)" },
         bottomLeft: { transform: "translateY(22px)" },
       }}
-      style={{boxShadow: '0 4px 8px 2px rgba(0, 0, 0, 0.3)',zIndex,display:minimized && "none"}}
+      style={{ boxShadow: '0 4px 8px 2px rgba(0, 0, 0, 0.3)', zIndex, display: minimized && "none" }}
     >
-      <div className={`app h-full drop-shadow-xl bg-[#232a6231] backdrop-blur-md`} onMouseDown={()=>setProgramActiveIndex(index)}>
+      <div className={`app h-full drop-shadow-xl bg-[#232a6231] backdrop-blur-md`} onMouseDown={() => setProgramActiveIndex(index)}>
         <div className="app-title p-0.5 flex flex-row items-center justify-between px-2 shadow-md">
           <div className="flex flex-row items-center justify-center gap-1">
-            <Image
-              src={soon? programIcon:`/assets/os/icons/${programName}.png`}
+            <img
+              src={soon ? programIcon : `/assets/os/icons/${programName}.png`}
               alt={programName}
               className="h-5"
             />

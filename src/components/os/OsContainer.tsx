@@ -88,7 +88,7 @@ const OsContainer = ({ setWaitStartup }: { setWaitStartup: Dispatch<SetStateActi
                   : {}
               }
             >
-              <Image
+              <img
                 src={`/assets/os/icons/${p.name}.png`}
                 alt={`${p.name} icon`}
                 style={{ width: iconSize, height: iconSize }}

@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  future: {
-    webpack5: true,
-  },
-  outputDirectory: 'dist'
+  reactStrictMode: true,
 }
 
 module.exports = nextConfig

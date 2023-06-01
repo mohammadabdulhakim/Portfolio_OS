@@ -32,7 +32,7 @@ const Articles = ({isPage}:{isPage?:boolean}) => {
         {
           articles.sort((a, b) => b.positive_reactions_count - a.positive_reactions_count).map((article) => (
             <Link key={article.url} href={article.url} target='_blank' className='w-[400px] max-w-full h-[500px] bg-blue-900/50 backdrop-blur-md drop-shadow-lg rounded-lg overflow-hidden'>
-              <Image src={article.cover_image} alt={article.title} />
+              <img src={article.cover_image} alt={article.title} />
 
               <div className='p-3 flex flex-col gap-2 justify-between text-slate-200'>
 
