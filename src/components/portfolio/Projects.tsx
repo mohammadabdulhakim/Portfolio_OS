@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { projects } from "../../../constants";
 import Link from "next/link";
+import Image from "next/image";
 
 const Projects = ({ isPage }: { isPage?: boolean }) => {
   const router = useRouter();
