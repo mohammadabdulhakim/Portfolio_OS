@@ -22,16 +22,16 @@ const socialLinks = {
 
 const navLinks = [
   {
+    img: "Resume",
+    link: "/assets/cv.pdf",
+  },
+  {
     img: "github",
     link: socialLinks.githubLink,
   },
   {
     img: "linkedin",
     link: socialLinks.linkedinLink,
-  },
-  {
-    img: "Medium",
-    link: socialLinks.mediumLink,
   },
   {
     img: "DevTo",
@@ -53,16 +53,16 @@ const desktopPrograms = [
     name: "Appearance",
   },
   {
-    name: "Projects",
+    name: "Skills",
   },
   {
-    name: "Contact",
+    name: "Projects",
   },
   {
     name: "Articles",
   },
   {
-    name: "Skills",
+    name: "Contact",
   },
 ];
 
