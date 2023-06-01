@@ -39,7 +39,7 @@ const Projects = ({ isPage }: { isPage?: boolean }) => {
           {p.imgs.map((img)=>(
           <SwiperSlide key={img.src}>
             <div className="w-full">
-              <img
+              <Image
                 src={`/assets/projects/${p.title}/${img.src}`}
                 alt={`${"Co-Student" + " | Grade Feed"}`}
                 className="w-full h-full rounded-t-lg "
@@ -68,12 +68,12 @@ const Projects = ({ isPage }: { isPage?: boolean }) => {
           <div className="p-2 flex items-center justify-center gap-5 mx-auto">
             {p.demo &&
             <Link href={p.demo} target="_blank" className="opacity-95">
-              <img src="/assets/icons/demo.png" alt="demo" width={55} className="rounded-full" />
+              <Image src="/assets/icons/demo.png" alt="demo" width={55} className="rounded-full" />
             </Link>
             }
             {p.github &&
               <Link href={p.github} target="_blank" className="opacity-95">
-              <img src="/assets/icons/github.png" alt="github" width={55} className="rounded-full" />
+              <Image src="/assets/icons/github.png" alt="github" width={55} className="rounded-full" />
             </Link>}
           </div>
 
@@ -105,7 +105,7 @@ export default Projects;
   /* <div className='h-full grid md:p-10 p-5 bg-gradient-radial from-slate-500 via-slate-600 to-slate-700 text-white bg-cover grayscale-[0.5] hover:grayscale-0 duration-500 transition-all' style={{backgroundImage:"url({`/assets/projects/${"co-student/1"}`})"}} onClick={()=>router.push("#projects")}>
       <div className='h-[400px] w-[300px] bg-white/60 backdrop-blur-sm rounded-md drop-shadow-lg text-slate-900 flex items-center justify-between flex-col overflow-hidden'>
         <div className='flex-1 max-h-[50%] max-w-full overflow-hidden'>
-          <img src={`/assets/projects/co-student.jpg`} alt={`co-student`} className='w-full object-cover' />
+          <Image src={`/assets/projects/co-student.jpg`} alt={`co-student`} className='w-full object-cover' />
         </div>
 
         <div className='flex-1 flex flex-col px-7 pt-4 gap-2'>

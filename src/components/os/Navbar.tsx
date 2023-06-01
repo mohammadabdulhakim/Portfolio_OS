@@ -3,6 +3,7 @@ import { navLinks } from "../../../constants/index";
 import { useOsStore } from "../../../libs/osStates";
 import { useEffect, useState } from "react";
 import StartMenu from "./StartMenu";
+import Image from "next/image";
 
 const Navbar = ({setWaitStartup,openProgram}:any) => {
   const { openedPrograms, setOpenedPrograms,setIsClicked,isClicked } = useOsStore();
@@ -57,7 +58,7 @@ const Navbar = ({setWaitStartup,openProgram}:any) => {
         className="bg-[#99b6df52] h-full min-w-[100px] px-2 py-0.5 rounded-md flex items-center justify-center gap-2"
       >
         <button id="navbar-btn" onClick={handleStartMenuClick}>
-          <img src="/assets/os/icons/windows.png" />
+          <Image alt={"windows"} src="/assets/os/icons/windows.png" />
         </button>
         <hr className="border-none bg-[#323232] h-[80%] w-[1px]" />
         {openedPrograms.length !== 0 && (
@@ -71,7 +72,7 @@ const Navbar = ({setWaitStartup,openProgram}:any) => {
                   p.minimized && "bg-[#ffffff78] border-b-2 border-black"
                 }`}
               >
-                <img src={p.soon? (p.icon || ""):`/assets/os/icons/${p.name}.png`} />
+                <Image alt={p.name + "| Mohammad AbdulHakim"} src={p.soon? (p.icon || ""):`/assets/os/icons/${p.name}.png`} />
               </button>
             ))}
             <hr className="border-none bg-[#323232] h-[80%] w-[1px]" />
@@ -79,7 +80,7 @@ const Navbar = ({setWaitStartup,openProgram}:any) => {
         )}
         {navLinks.map((item) => (
           <a key={item.img} href={item.link} target="_blank" id="navbar-btn">
-            <img
+            <Image alt={item.img + "| Mohammad AbdulHakim"}
               src={`/assets/os/icons/${item.img}.png`}
               className="h-10 rounded-lg"
             />

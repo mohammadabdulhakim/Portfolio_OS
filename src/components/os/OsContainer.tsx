@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import Program from "./programs/Program";
 import allPrograms from "./programs";
 import ContextMenu from "../ContextMenu";
+import Image from "next/image";
 
 const OsContainer = ({ setWaitStartup }: { setWaitStartup: Dispatch<SetStateAction<boolean>> }) => {
   const {
@@ -87,7 +88,7 @@ const OsContainer = ({ setWaitStartup }: { setWaitStartup: Dispatch<SetStateActi
                   : {}
               }
             >
-              <img
+              <Image
                 src={`/assets/os/icons/${p.name}.png`}
                 alt={`${p.name} icon`}
                 style={{ width: iconSize, height: iconSize }}

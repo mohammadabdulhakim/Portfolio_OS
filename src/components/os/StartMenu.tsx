@@ -7,6 +7,7 @@ import { FormEvent, useState } from "react";
 import { useOsStore } from "../../../libs/osStates";
 import Link from "next/link";
 import { desktopPrograms, startMenuPrograms } from "../../../constants/index";
+import Image from "next/image";
 
 const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:(newValue:boolean)=>void,openProgram:(pName:string,soon?:boolean,icon?:string)=>void}) => {
   const [powerSettings, setPowerSettings] = useState(false)
@@ -56,7 +57,7 @@ const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:(newValue:boolea
             onClick={()=>{openProgram(p.name);setIsClicked("")}}
             id="desktop-btn"
           >
-            <img
+            <Image
               src={`/assets/os/icons/${p.name}.png`}
               className="w-8"
               alt={`${p.name} icon`}
@@ -71,7 +72,7 @@ const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:(newValue:boolea
             onClick={()=>{openProgram(p.name,true,p.icon);setIsClicked("")}}
             id="desktop-btn"
           >
-            <img
+            <Image
               src={`${p.icon}`}
               className="w-8"
               alt={`${p.name} icon`}

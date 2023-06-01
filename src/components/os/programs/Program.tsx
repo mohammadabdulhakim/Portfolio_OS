@@ -8,6 +8,7 @@ import {MdClose} from "react-icons/md"
 import {BsDash} from "react-icons/bs"
 
 import { useOsStore } from "../../../../libs/osStates";
+import Image from "next/image";
 
 const Program = ({ ProgramContent, programName, index,minimized, soon,programIcon}:any) => {
   let initPosition = { x: Math.floor(Math.random()*300), y: Math.floor(Math.random()*250) }
@@ -98,7 +99,7 @@ const Program = ({ ProgramContent, programName, index,minimized, soon,programIco
       <div className={`app h-full drop-shadow-xl bg-[#232a6231] backdrop-blur-md`} onMouseDown={()=>setProgramActiveIndex(index)}>
         <div className="app-title p-0.5 flex flex-row items-center justify-between px-2 shadow-md">
           <div className="flex flex-row items-center justify-center gap-1">
-            <img
+            <Image
               src={soon? programIcon:`/assets/os/icons/${programName}.png`}
               alt={programName}
               className="h-5"
