@@ -71,7 +71,12 @@ const Contact = ({isPage}:{isPage?:boolean}) => {
         <textarea required className="input" minLength={10} onChange={handleChange} value={form.message} name="message" placeholder="Your Message" />
 
         <button className="form_btn mt-5" type="submit" disabled={submitting}>
-          Submit
+          {
+            submitting?
+          "Submitting..."
+          :
+          "Submit"
+          }
         </button>
       </form>
     </div>
