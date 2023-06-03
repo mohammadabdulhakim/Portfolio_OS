@@ -226,7 +226,7 @@ const projects:ProjectI[] = [
     },
     {
       title: "pomatrix",
-      hasDomain: true,
+      hasDomain: false,
       desc: "is the ultimate productivity app that combines the Pomodoro technique and the Eisenhower matrix. With drag and drop task management, completed task tracking, and a clock-dependent Pomodoro timer, PoMatrix is perfect for boosting your productivity. Try it today and start working smarter, not harder.",
       imgs: [
         {
@@ -266,7 +266,7 @@ const projects:ProjectI[] = [
           title: "Completed tasks"
         },
       ],
-      demo: "https://pomatrix.com",
+      demo: "https://workflow.co-student.com",
       tags: [
         {
           name: "nextjs",
