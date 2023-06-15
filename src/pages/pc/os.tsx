@@ -25,7 +25,7 @@ const Os = () => {
   };
 
   return (
-    <div className="select-none">
+    <div className="select-none bg-gradient-radial from-neutral-700 via-neutral-800 to-neutral-950 w-screen h-screen">
       <Head>
         <title>OS | Mohammad AbdulHakim | abomisr</title>
         <meta name="description" content="Awesome OS system with apps [Chrome, Edge, VScode, Appearance, Articles and much more]. Mohammad AbdulHakim" />
@@ -36,7 +36,7 @@ const Os = () => {
       </Head>
       <FullScreen handle={fullScreenHandle}>
         {!askedForScreen ? (
-          <div className="bg-primary absolute bottom-[50%] translate-y-[50%] left-[50%] -translate-x-[50%] w-fit p-4 rounded-xl flex items-center justify-center flex-col gap-6">
+          <div className="text-white bg-primary absolute bottom-[50%] translate-y-[50%] left-[50%] -translate-x-[50%] w-fit p-4 rounded-xl flex items-center justify-center flex-col gap-6">
             <h2 className="text-center ">Would you like to open the application in full-screen mode? This is the recommended setting for optimal viewing and usability.</h2>
             <div className="flex items-center justify-evenly w-full">
               <button id="btn1" className="w-[100px]"
