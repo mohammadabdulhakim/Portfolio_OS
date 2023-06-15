@@ -7,6 +7,7 @@ const projects = () => {
     <>
     <Head>
         <title>Projects | Mohammad AbdulHakim | abomisr</title>
+        <meta name="description" content="My Projects" />
     </Head>
     <Projects isPage={true} />
     </>

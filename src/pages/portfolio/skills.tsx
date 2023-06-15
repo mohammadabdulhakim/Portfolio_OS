@@ -5,7 +5,8 @@ const skills = () => {
   return (
     <>
     <Head>
-        <title>Projects | Mohammad AbdulHakim | abomisr</title>
+        <title>Skills | Mohammad AbdulHakim | abomisr</title>
+        <meta name="description" content="My Skills" />
     </Head>
     <Skills isPage={true} />
     </>

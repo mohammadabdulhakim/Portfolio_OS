@@ -28,6 +28,7 @@ const Os = () => {
     <div className="select-none">
       <Head>
         <title>OS | Mohammad AbdulHakim | abomisr</title>
+        <meta name="description" content="Awesome OS system with apps [Chrome, Edge, VScode, Appearance, Articles and much more]. Mohammad AbdulHakim" />
         <link
           rel="stylesheet"
           href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"

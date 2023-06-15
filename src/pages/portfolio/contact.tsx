@@ -7,6 +7,7 @@ const page = () => {
     <>
     <Head>
         <title>Contact | Mohammad AbdulHakim | abomisr</title>
+        <meta name="description" content="Contact" />
     </Head>
     <Contact isPage={true} />
     </>
