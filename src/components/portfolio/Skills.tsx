@@ -1,5 +1,4 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-import Image from 'next/image';
 import { useRouter } from 'next/navigation'
 
 const skills = [
@@ -98,12 +97,9 @@ const Skills = ({ isPage }: { isPage?: boolean }) => {
                 </ParallaxLayer>
             ))}
 
-            {
-                !isPage &&
                 <ParallaxLayer offset={skills.length + 3} speed={0.5} className='flex items-center justify-center'>
-                    <p className='text_head'>Click to exit</p>
+                    {!isPage && <p className='text_head'>Click to exit</p>}
                 </ParallaxLayer>
-            }
 
         </Parallax>
     )

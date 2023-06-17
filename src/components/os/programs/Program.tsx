@@ -96,7 +96,7 @@ const Program = ({ ProgramContent, programName, index, minimized, soon, programI
       }}
       style={{ boxShadow: '0 4px 8px 2px rgba(0, 0, 0, 0.3)', zIndex, display: minimized && "none" }}
     >
-      <div className={`app h-full drop-shadow-xl bg-[#232a6231] backdrop-blur-md`} onMouseDown={() => setProgramActiveIndex(index)}>
+      <div className={`app h-full drop-shadow-xl bg-[#232a6231] backdrop-blur-md text-white`} onMouseDown={() => setProgramActiveIndex(index)}>
         <div className="app-title p-0.5 flex flex-row items-center justify-between px-2 shadow-md">
           <div className="flex flex-row items-center justify-center gap-1">
             <img

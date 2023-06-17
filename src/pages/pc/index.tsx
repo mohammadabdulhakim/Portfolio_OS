@@ -35,7 +35,7 @@ export default function Home() {
         <meta name="description" content="Amazing pc among stars with an awesome OS system. Mohammad AbdulHakim" />
       </Head>
       <main
-        className={`flex min-h-screen flex-col items-center justify-between relative bg-primary`}
+        className={`flex min-h-screen flex-col items-center justify-between relative bg-primary text-white`}
       >
         <section className="w-full h-screen relative mx-auto overflow-hidden">
           <CursorLight />
