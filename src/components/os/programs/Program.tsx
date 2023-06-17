@@ -72,11 +72,11 @@ const Program = ({ ProgramContent, programName, index, minimized, soon, programI
     } else {
       setZIndex(10)
     }
-  }, [programActiveIndex])
+  }, [programActiveIndex,index])
 
   useEffect(() => {
     setProgramActiveIndex(index)
-  }, [])
+  }, [index,setProgramActiveIndex])
 
   return (
     <Rnd
@@ -99,10 +99,11 @@ const Program = ({ ProgramContent, programName, index, minimized, soon, programI
       <div className={`app h-full drop-shadow-xl bg-[#232a6231] backdrop-blur-md text-white`} onMouseDown={() => setProgramActiveIndex(index)}>
         <div className="app-title p-0.5 flex flex-row items-center justify-between px-2 shadow-md">
           <div className="flex flex-row items-center justify-center gap-1">
-            <img
+            <Image
               src={soon ? programIcon : `/assets/os/icons/${programName}.png`}
               alt={programName}
-              className="h-5"
+              height={20}
+              width={20}
             />
             <span>{programName}</span>
           </div>

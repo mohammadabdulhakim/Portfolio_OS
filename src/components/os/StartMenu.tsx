@@ -9,9 +9,9 @@ import Link from "next/link";
 import { desktopPrograms, startMenuPrograms } from "../../../constants/index";
 import Image from "next/image";
 
-const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:(newValue:boolean)=>void,openProgram:(pName:string,soon?:boolean,icon?:string)=>void}) => {
+const StartMenu = ({ setWaitStartup, openProgram }: { setWaitStartup: (newValue: boolean) => void, openProgram: (pName: string, soon?: boolean, icon?: string) => void }) => {
   const [powerSettings, setPowerSettings] = useState(false)
-  const { setIsClicked,setOpenedPrograms } = useOsStore();
+  const { setIsClicked, setOpenedPrograms } = useOsStore();
   const [props] = useSpring(
     () => ({
       from: { opacity: 0, y: "100%", x: "50%" },
@@ -20,12 +20,12 @@ const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:(newValue:boolea
     []
   );
 
-  const handleSubmit = (e: any /* FormEvent<HTMLFormElement> */) =>{
+  const handleSubmit = (e: any /* FormEvent<HTMLFormElement> */) => {
     e.preventDefault();
 
     setIsClicked("")
-    
-    if(!e.target) return;
+
+    if (!e.target) return;
     window.open("https://www.google.com/search?safe=active&q=" + (e.target["0"] as HTMLInputElement).value);
   }
 
@@ -50,35 +50,37 @@ const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:(newValue:boolea
           </form>
         </div>
         <div id="center" className="grid grid-cols-5 p-4 gap-2">
-          {desktopPrograms.map(p=>(
+          {desktopPrograms.map(p => (
             <button
-            className={``}
-            key={p.name}
-            onClick={()=>{openProgram(p.name);setIsClicked("")}}
-            id="desktop-btn"
-          >
-            <img
-              src={`/assets/os/icons/${p.name}.png`}
-              className="w-8"
-              alt={`${p.name} icon`}
-            />
-            <span>{p.name}</span>
-          </button>
+              className={``}
+              key={p.name}
+              onClick={() => { openProgram(p.name); setIsClicked("") }}
+              id="desktop-btn"
+            >
+              <Image
+                width={32}
+                height={32}
+                src={`/assets/os/icons/${p.name}.png`}
+                alt={`${p.name} icon`}
+              />
+              <span>{p.name}</span>
+            </button>
           ))}
-          {startMenuPrograms.map(p=>(
+          {startMenuPrograms.map(p => (
             <button
-            className={``}
-            key={p.name}
-            onClick={()=>{openProgram(p.name,true,p.icon);setIsClicked("")}}
-            id="desktop-btn"
-          >
-            <img
-              src={`${p.icon}`}
-              className="w-8"
-              alt={`${p.name} icon`}
-            />
-            <span>{p.name}</span>
-          </button>
+              className={``}
+              key={p.name}
+              onClick={() => { openProgram(p.name, true, p.icon); setIsClicked("") }}
+              id="desktop-btn"
+            >
+              <Image
+                width={32}
+                height={32}
+                src={`${p.icon}`}
+                alt={`${p.name} icon`}
+              />
+              <span>{p.name}</span>
+            </button>
           ))}
         </div>
         <div
@@ -86,12 +88,12 @@ const StartMenu = ({setWaitStartup,openProgram}:{setWaitStartup:(newValue:boolea
           className="bg-gradient-to-l from-sky-300 to-sky-500/50 w-full h-[50px] flex items-center justify-between p-6"
         >
           <div className="flex items-center justify-center gap-2 hover:bg-white/10 rounded-sm p-2 transition-all "><FaUserCircle className="text-[25px]" /><span>Sign in</span></div>
-          <div id="power" className="relative" onMouseEnter={()=>setPowerSettings(true)} onMouseLeave={()=>setPowerSettings(false)}>
-            <div className={`${powerSettings? "h-fit p-2 ":"h-0"} transition-all w-[130px] bg-white drop-shadow-md rounded-md absolute bottom-[36px] right-[50%] translate-x-[50%] text-slate-900 flex items-start justify-center flex-col gap-1`}>
+          <div id="power" className="relative" onMouseEnter={() => setPowerSettings(true)} onMouseLeave={() => setPowerSettings(false)}>
+            <div className={`${powerSettings ? "h-fit p-2 " : "h-0"} transition-all w-[130px] bg-white drop-shadow-md rounded-md absolute bottom-[36px] right-[50%] translate-x-[50%] text-slate-900 flex items-start justify-center flex-col gap-1`}>
               {
-                powerSettings && 
+                powerSettings &&
                 <>
-                  <button className="flex items-center gap-2 hover:bg-gray-400/20 w-full p-2 transition-all duration-75" onClick={()=>{setWaitStartup(true);setOpenedPrograms([])}}>
+                  <button className="flex items-center gap-2 hover:bg-gray-400/20 w-full p-2 transition-all duration-75" onClick={() => { setWaitStartup(true); setOpenedPrograms([]) }}>
                     <RiRestartLine className="text-[18px]" />
                     <span className="text-[14px]">Restart</span>
                   </button>

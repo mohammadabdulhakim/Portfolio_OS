@@ -43,7 +43,7 @@ const Projects = ({ isPage }: { isPage?: boolean }) => {
               <img
                 src={`/assets/projects/${p.title}/${img.src}`}
                 alt={`${"Co-Student" + " | Grade Feed"}`}
-                className="w-full h-full rounded-t-lg "
+                className="w-full h-full rounded-t-lg"
               />
               <span className="text-lg text-slate-900 w-full text-center block pt-1 bg-white p-1 rounded-b-lg">
                 {img.title}
@@ -69,12 +69,12 @@ const Projects = ({ isPage }: { isPage?: boolean }) => {
           <div className="p-2 flex items-center justify-center gap-5 mx-auto">
             {p.demo &&
             <Link href={p.demo} target="_blank" className="opacity-95">
-              <img src="/assets/icons/demo.png" alt="demo" width={55} className="rounded-full" />
+              <Image height={55} src="/assets/icons/demo.png" alt="demo" width={55} className="rounded-full" />
             </Link>
             }
             {p.github &&
               <Link href={p.github} target="_blank" className="opacity-95">
-              <img src="/assets/icons/github.png" alt="github" width={55} className="rounded-full" />
+              <Image height={55} src="/assets/icons/github.png" alt="github" width={55} className="rounded-full" />
             </Link>}
           </div>
 

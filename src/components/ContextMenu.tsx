@@ -41,7 +41,7 @@ function ContextMenu({
     return () => {
       container?.removeEventListener("contextmenu", handleClick);
     };
-  }, []);
+  }, [divId]);
 
   const handleClickOutside = (e: MouseEvent | TouchEvent) => {
     const target = e.target as HTMLElement;
@@ -53,7 +53,7 @@ function ContextMenu({
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
-  }, [hidden]);
+  }, [hidden,handleClickOutside]);
 
   const menuStyle: CSSProperties = {
     position: "fixed",

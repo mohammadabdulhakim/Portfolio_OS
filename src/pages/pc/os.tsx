@@ -15,7 +15,7 @@ const Os = () => {
     if (waitStartup) {
       setTimeout(() => {
         setWaitStartup(false);
-      }, 8000);
+      }, 800);
     }
   }, [waitStartup]);
 

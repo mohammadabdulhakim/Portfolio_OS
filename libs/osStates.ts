@@ -21,8 +21,8 @@ type osStoreType = {
   isClicked: string;
   setIsClicked: (clicked: string) => void;
   closeAllClicked: () => void;
-  iconSize: string;
-  setIconSize: (iconSize: string) => void;
+  iconSize: number;
+  setIconSize: (iconSize: number) => void;
 };
 
 const useOsStore = add<osStoreType>()((set) => ({
@@ -37,7 +37,7 @@ const useOsStore = add<osStoreType>()((set) => ({
   isClicked: "",
   setIsClicked: (clicked) => set({ isClicked: clicked }),
   closeAllClicked: () => set({ isClicked: "" }),
-  iconSize: "30px",
+  iconSize: 30,
   setIconSize: (iconSize) => set({ iconSize }),
 }));
 

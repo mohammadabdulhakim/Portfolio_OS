@@ -19,7 +19,7 @@ const Articles = ({isPage}:{isPage?:boolean}) => {
     } 
 
     if (!articles.length) getArticles();
-  }, [])
+  }, [articles.length])
 
 
   return (

@@ -75,21 +75,21 @@ const contextMenuItems = ({setIconSize,openProgram}:any) => [
         title: "Large",
         icon: "uil-anchor",
         action: () => {
-          setIconSize("40px");
+          setIconSize(40);
         },
       },
       {
         title: "Medium",
         icon: "uil-balance-scale",
         action: () => {
-          setIconSize("30px");
+          setIconSize(30);
         },
       },
       {
         title: "Small",
         icon: "uil-compress-alt",
         action: () => {
-          setIconSize("20px");
+          setIconSize(20);
         },
       },
     ],
@@ -98,7 +98,7 @@ const contextMenuItems = ({setIconSize,openProgram}:any) => [
     title: "Refresh",
     icon: "uil-sync",
     subMenu: null,
-    action: () => {},
+    action: () => {}, 
   },
   {
     title: "Links",
