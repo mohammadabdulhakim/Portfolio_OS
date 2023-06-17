@@ -14,6 +14,11 @@ const nextConfig = {
     "notepad-plus-plus.org",
     "www.win-rar.com",
     "www.videolan.org",
+    "res.cloudinary.com",
+    "d2nir1j4sou8ez.cloudfront.net",
+    "repository-images.githubusercontent.com",
+    "avatars.githubusercontent.com",
+    "play-lh.googleusercontent.com",
   ],
   },
   env: {
