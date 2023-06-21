@@ -283,6 +283,56 @@ const projects:ProjectI[] = [
       ],
     },
     {
+      title: "airbnb clone",
+      hasDomain: false,
+      desc: "built with Next.js, TypeScript, TailwindCSS, Zustand, Prisma, and MongoDB is a modern and efficient web app for booking accommodations. With fast page loads, easy styling, and simple state management, it provides an intuitive search experience and seamless booking process. Plus, it's easy to maintain and extend thanks to the use of popular and reliable technologies.",
+      imgs: [
+        {
+          src: "1.png",
+          title: "Home page"
+        },
+        {
+          src: "2.png",
+          title: "Reservation"
+        },
+        {
+          src: "3.png",
+          title: "Filters"
+        },
+        {
+          src: "4.png",
+          title: "New Listing"
+        },
+        {
+          src: "5.png",
+          title: "My properties"
+        },
+        {
+          src: "6.png",
+          title: "My trips"
+        },
+        {
+          src: "7.png",
+          title: "Auth"
+        },
+      ],
+      demo: "https://air-clone-app.vercel.app/",
+      tags: [
+        {
+          name: "nextjs",
+          color: "orange-text-gradient",
+        },
+        {
+          name: "ts",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "tailwind",
+          color: "pink-text-gradient",
+        },
+      ],
+    },
+    {
       title: "agere",
       desc: "is an exceptional npm package that can assist you in numerous ways.\n   It boasts a range of awesome tools, such as randArr() which randomizes array elements,\n   and gPss() which generates strong passwords or IDs based on your preferences, among others.",
       imgs: [
@@ -345,7 +395,7 @@ const projects:ProjectI[] = [
           title: "Appearance"
         },
       ],
-      demo:"/",
+      demo:"/pc",
       tags: [
         {
           name: "nextjs",
