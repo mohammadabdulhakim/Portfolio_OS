@@ -15,7 +15,7 @@ const Os = () => {
     if (waitStartup) {
       setTimeout(() => {
         setWaitStartup(false);
-      }, 800);
+      }, 8000);
     }
   }, [waitStartup]);
 
@@ -37,7 +37,7 @@ const Os = () => {
       <FullScreen handle={fullScreenHandle}>
         {!askedForScreen ? (
           <div className="text-white bg-primary absolute bottom-[50%] translate-y-[50%] left-[50%] -translate-x-[50%] w-fit p-4 rounded-xl flex items-center justify-center flex-col gap-6">
-            <h2 className="text-center ">Would you like to open the application in full-screen mode? This is the recommended setting for optimal viewing and usability.</h2>
+            <h2 className="text-center ">Would you like to switch to full-screen mode for optimal viewing and usability? Please note that there is a sound effect during startup.</h2>
             <div className="flex items-center justify-evenly w-full">
               <button id="btn1" className="w-[100px]"
                 onClick={() => {
