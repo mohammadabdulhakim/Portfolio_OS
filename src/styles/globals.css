@@ -205,6 +205,36 @@ a:hover{
     
     animation: logo-pyLeft 4000ms both;
 }
+
+
+#logo-pyRight{
+  transform: translate(50%, 50%) rotate(151deg);
+  bottom: 56px;
+  right: 120px;
+  
+  animation: logo-pyRight 4000ms both;
+}
+@keyframes logo-pyRight {
+  30%{
+      transform: translate(50%, 50%) rotate(151deg);
+      bottom: 56px;
+      right: 120px;
+  }
+  50% {
+      transform: translate(50%, 50%) rotate(209deg);
+      bottom: 56px;
+      right: 53px;
+  }
+  100% {
+    transform: translate(50%, 50%) rotate(0deg);
+    bottom: 50%;
+    right: 50%;
+  }
+}
+
+
+
+
 @keyframes logo-pyLeft {
     30%{
         transform: translate(-50%, 50%) rotate(209deg);
@@ -223,34 +253,6 @@ a:hover{
       width: 100%;
     }
   }
-
-
-
-#logo-pyRight{
-    transform: translate(50%, 50%) rotate(151deg);
-    bottom: 56px;
-    right: 120px;
-    
-    animation: logo-pyRight 4000ms both;
-}
-@keyframes logo-pyRight {
-    30%{
-        transform: translate(50%, 50%) rotate(151deg);
-        bottom: 56px;
-        right: 120px;
-    }
-    50% {
-        transform: translate(50%, 50%) rotate(209deg);
-        bottom: 56px;
-        right: 53px;
-    }
-    100% {
-      transform: translate(50%, 50%) rotate(0deg);
-      bottom: 50%;
-      right: 50%;
-    }
-  }
-
 
 
 

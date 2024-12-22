@@ -6,7 +6,7 @@ import { CgScrollV } from "react-icons/cg"
 
 import Skills from "@/components/portfolio/Skills";
 import Projects from "@/components/portfolio/Projects";
-import Articles from "@/components/portfolio/Articles";
+// import Articles from "@/components/portfolio/Articles";
 import Resume from "@/components/portfolio/Resume";
 import Contact from "@/components/portfolio/Contact";
 import { textAnimation, widthAnimation } from "../../../utils/animationProps";
@@ -89,9 +89,9 @@ const PortfolioPage = () => {
           <Projects />
         </div>
 
-        <div id={`articles`}>
+        {/* <div id={`articles`}>
           <Articles />
-        </div>
+        </div> */}
 
         <div id={`resume`} className="w-screen xl:block hidden">
           <Resume />

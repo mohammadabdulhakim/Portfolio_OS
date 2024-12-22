@@ -28,7 +28,7 @@ const index = () => {
         <div className="relative mb-8">
           <div className="links-circle w-full h-full rounded-full block absolute z-0 text-neutral-700">
             <animated.div style={opacityAnimation(1000)}>
-              <Link href={socialLinks.devToLink} target="_blank" className="hover:text-neutral-900 absolute top-0 left-0 -translate-x-[50%] -translate-y-[50%]">
+              <Link href={socialLinks.homePage} target="_blank" className="hover:text-neutral-900 absolute top-0 left-0 -translate-x-[50%] -translate-y-[50%]">
                 <FaDev size={50} />
               </Link>
             </animated.div>
@@ -76,10 +76,10 @@ const index = () => {
               Projects
             </Link>
             ,{" "}
-            <Link className="text-blue-600" target="_blank" href={`/portfolio/articles`}>
+            {/* <Link className="text-blue-600" target="_blank" href={`/portfolio/articles`}>
               Tech Articles
             </Link>
-            ,{" "}
+            ,{" "} */}
             <Link className="text-blue-600" target="_blank" href={`/assets/cv.pdf`} download={"Mohammad-AbdulHakim-CV.pdf"}>
               Resume
             </Link>
@@ -96,8 +96,8 @@ const index = () => {
               operating system
             </Link>
             {" "}to get a glimpse of my technical abilities. If you have any questions or comments, please feel free to contact me at{" "}
-            <Link className="text-blue-600" href={"mailto:contact@abomisr.com"}>
-              contact@abomisr.com
+            <Link className="text-blue-600" href={"mailto:0mohammedabdulhakim@gmail.com"}>
+            0mohammedabdulhakim@gmail.com
             </Link>
             .
           </animated.div>

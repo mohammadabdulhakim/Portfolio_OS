@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { ComputersCanvas, CursorLight, Loader } from "@/components";
 import MainParticles from "@/components/particles/MainParticles";
-import { addBtnSound } from "../../../utils/functions";
+// import { addBtnSound } from "../../../utils/functions";
 
 export default function Home() {
   const [isPhone, setIsPhone] = useState<boolean | null>(null);
@@ -24,9 +24,9 @@ export default function Home() {
     };
   }, []);
 
-  useEffect(() => {
-    addBtnSound();
-  }, [lightsOn, isPhone]);
+  // useEffect(() => {
+  //   addBtnSound();
+  // }, [lightsOn, isPhone]);
 
   return (
     <Suspense fallback={<Loader />}>

@@ -1,14 +1,14 @@
-import { useEffect } from "react"
+// import { useEffect } from "react"
 
 
 const Startup = () => {
 
-    useEffect(()=>{
-        const audio = new Audio("/assets/sounds/windowsXpStartup.mp3")
-        setTimeout(()=>{
-            audio.play()
-        },2000)
-    },[])
+    // useEffect(()=>{
+    //     const audio = new Audio("/assets/sounds/windowsXpStartup.mp3")
+    //     setTimeout(()=>{
+    //         audio.play()
+    //     },2000)
+    // },[])
 
 
     return (

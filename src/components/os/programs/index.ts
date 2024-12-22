@@ -5,7 +5,7 @@ import Edge from "./Edge";
 import Appearance from "./Appearance";
 import Projects from "../../portfolio/Projects";
 import Contact from "../../portfolio/Contact";
-import Articles from "../../portfolio/Articles";
+// import Articles from "../../portfolio/Articles";
 import Skills from "../../portfolio/Skills";
 
 const allPrograms: any = {
@@ -16,7 +16,7 @@ const allPrograms: any = {
   Appearance,
   Projects,
   Contact,
-  Articles,
+  // Articles,
   Skills,
 };
 

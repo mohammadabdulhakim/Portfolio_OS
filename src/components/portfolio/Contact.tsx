@@ -37,7 +37,7 @@ const Contact = ({isPage}:{isPage?:boolean}) => {
           from_name: form.name,
           to_name: "Mohammad AbdulHakim",
           from_email: form.email,
-          to_email: "contact@abomisr.com",
+          to_email: "0mohammedabdulhakim@gmail.com",
           message: form.message,
         },
         process.env.EMAILJS_PUBLIC_KEY

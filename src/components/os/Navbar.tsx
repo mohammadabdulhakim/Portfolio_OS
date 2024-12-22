@@ -81,8 +81,8 @@ const Navbar = ({setWaitStartup,openProgram}:any) => {
         {navLinks.map((item) => (
           <a key={item.img} href={item.link} target="_blank" id="navbar-btn">
             <Image alt={item.img + "| Mohammad AbdulHakim"}
-              height={40}
-              width={40}
+              height={35}
+              width={35}
               src={`/assets/os/icons/${item.img}.png`}
               className="h-10 rounded-lg"
             />

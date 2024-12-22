@@ -13,7 +13,7 @@ const Articles = ({isPage}:{isPage?:boolean}) => {
 
   useEffect(() => {
     const getArticles = async () => {
-      const res = await Axios.get("https://dev.to/api/articles?username=abomisr")
+      const res = await Axios.get("https://dev.to/api/articles?username=mohammadabdulhakim")
 
       setArticles(res.data)
     } 

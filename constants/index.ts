@@ -13,14 +13,17 @@ const osBgSrcs = [
 ]; // "https://images.unsplash.com/photo-1622737133809-d95047b9e673"
 
 const socialLinks = {
-  githubLink:"https://github.com/abomisr",
-  linkedinLink:"https://www.linkedin.com/in/abomisr",
+  homePage:"/",
+  githubLink:"https://github.com/mohammadabdulhakim",
+  linkedinLink:"https://www.linkedin.com/in/mohammadabdulhakim",
   mediumLink:"https://www.medium.com/@abomisr",
-  devToLink:"https://dev.to/abomisr"
-
 }
 
 const navLinks = [
+  {
+    img: "home",
+    link: socialLinks.homePage,
+  },
   {
     img: "Resume",
     link: "/assets/cv.pdf",
@@ -32,10 +35,6 @@ const navLinks = [
   {
     img: "linkedin",
     link: socialLinks.linkedinLink,
-  },
-  {
-    img: "DevTo",
-    link: socialLinks.devToLink,
   },
 ];
 
@@ -58,9 +57,9 @@ const desktopPrograms = [
   {
     name: "Projects",
   },
-  {
-    name: "Articles",
-  },
+  // {
+  //   name: "Articles",
+  // },
   {
     name: "Contact",
   },
@@ -119,10 +118,10 @@ const contextMenuItems = ({setIconSize,openProgram}:any) => [
         },
       },
       {
-        title: "DevTo",
+        title: "home",
         icon: "uil-brackets-curly",
         action: () => {
-          window.open(socialLinks.devToLink, "_blank");
+          window.open(socialLinks.homePage, "_blank");
         },
       },
     ],
@@ -354,7 +353,7 @@ const projects:ProjectI[] = [
         },
       ],
       demo: "https://www.npmjs.com/package/agere",
-      github:"https://github.com/abomisr/agere",
+      github:"https://github.com/mohammadabdulhakim/agere",
       tags: [
         {
           name: "js",
@@ -427,10 +426,10 @@ const projects:ProjectI[] = [
           src: "3.png",
           title: "Projects"
         },
-        {
-          src: "4.png",
-          title: "Articles"
-        },
+        // {
+        //   src: "4.png",
+        //   title: "Articles"
+        // },
         {
           src: "5.png",
           title: "Resume"
@@ -489,7 +488,7 @@ const projects:ProjectI[] = [
           title: "CRUDs"
         },
       ],
-      github:"https://github.com/abomisr?tab=repositories",
+      github:"https://github.com/mohammadabdulhakim?tab=repositories",
       tags: [
         {
           name: "variety",
